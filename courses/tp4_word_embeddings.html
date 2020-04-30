@@ -175,7 +175,7 @@ Therefore, the idea is to use the closest function to find vectors similar to <t
 	<h3>V. Evaluation</h3>
 	<ol>
 		<p> To evaluate the quality of a set of word embeddings, we will use data from the WS-3531 dataset (<a href="https://github.com/k-kawakami/embedding-evaluation">https://github.com/k-kawakami/embedding-evaluation</a>). </br>
-The file EN-WS-353-REL.txt contains on each line a pair of words followed by the average of a similarity rating by human judges.
+The file <tt>human_correlation.txt</tt> contains on each line a pair of words followed by the average of a similarity rating by human judges.
 The higher the rating, the more similar the judges though the words in the pair are. </br>
 One way to evaluate the quality of word embeddings is to compute the correlation between the cosine similarity of the pairs and human ratings. </br>
 Since cosine similarities and judgements are on a different scale, we will use a rank correlation (how similar two rankings are).</br>
