@@ -24,7 +24,7 @@
 	
 	<ul>
 		<li>Use the text8 data file (download <a href="https://cservan.github.io/tools/text8.zip">here</a>) to train our word embeddings.
-		</li><li>Decompress then using unzip:<pre>unzip -x text8.zip </pre> 
+		<li>A second dataset from wikipedia is available (download <a href="https://cservan.github.io/data/wiki.en.txt.gz">here</a>) to train our word embeddings.
 	</li></ul>
 	<hr>
 	<h2>Report
@@ -62,7 +62,7 @@
 		
 		<p><b>WARNING:</b> Read carefully the documentation available here: <a href="https://github.com/facebookresearch/fastText">https://github.com/facebookresearch/fastText</a></p>
 		<ol>
-			<p><strong>Exercice 1:</strong> Train two models, with a vector dimension of 50, 5iteration of training and a window size of 15.
+			<p><strong>Exercice 1:</strong> Train two models for each dataset, with a vector dimension of 50, 5iteration of training and a window size of 15.
 			</p><ol>
 				<p><strong>Q1:</strong> Train a cbow model, explain your command line (1pt)</p>
 				<p><strong>Q2:</strong> Train a skip-gram model, explain your command line (1pt)</p>
@@ -84,14 +84,16 @@
             vocab = {}
             rev_vocab = []
             lines = open(filename).readlines()
-            vectors = np.zeros((len(lines), len(lines[0].split()) - 1))
+            vectors = np.zeros((int(lines[0].split()[0]), int(lines[0].split()[1])))
             for i, line in enumerate(lines):
                 tokens = line.strip().split()
-                vocab[tokens[0]] = i
-                rev_vocab.append(tokens[0])
-                vectors[i] = [float(value) for value in tokens[1:]]
+                if (i > 0) :
+                    vocab[tokens[0]] = i-1
+                    rev_vocab.append(tokens[0])
+                    vectors[i-1] = [float(value) for value in tokens[1:]]
             return vocab, rev_vocab, vectors
-</pre>
+
+            </pre>
 		<ol>
 			<p><strong>Exercice 1:</strong> Loading</p>
 			<ol>
@@ -99,11 +101,11 @@
                 <p></p>
 				<p><strong>Q2: </strong> what "vocab", "rev_vocab" and "vectors" stand for? (1pt)</p>		 
 			</ol>
-			<p><strong>Exercice 2:</strong> Compute the cosine Similarity</p>
+			<p><strong>Exercice 2:</strong> Compute the cosine similarity for each model and each datasets</p>
 			<ol>
 				<p><strong>Q1: </strong> Explain what is the cosine similarity. (1pt)</p>
                 <p></p>
-				<p><strong>Q2: </strong> How to compute it in python using numpy? (1pt)</p>		 
+				<p><strong>Q2: </strong> How to compute it in python using numpy? and using scipy? (2pt)</p>		 
                 <p></p>
 				<p><strong>Q3: </strong> What is the cosine similarity between the vectors representing "dog" and
 "cat", and what about "dog" and "dentist"? (1pt)</p>
@@ -121,6 +123,7 @@ Then we can use some numpy trick to recover the indices of the n highest scores.
         </p>
         <pre>
         def closest(vectors, vector, n=10):
+            n=n+1
             scores = np.dot(vectors, vector.T)
             indices = np.argpartition(scores, -n)[-n:]
             indices = indices[np.argsort(scores[indices])]
@@ -141,6 +144,7 @@ Then we can use some numpy trick to recover the indices of the n highest scores.
 				<p><strong>Q1: </strong> What are the closest words to "apple"? (1pt)</p>
 				<p><strong>Q2: </strong> What about other words (close to "apple")? (1pt)</p>
 				<p><strong>Q3: </strong> Can you find words which have a strange neighborhood? (1pt)</p>
+				<p><strong>Q4: </strong> Check your answers using <tt> scipy.spatial.distance.cosine </tt> regarding the scores obtained what can you conclude about the dot product?</p>
 			</ol>
 		</ol>
 	</ol>
@@ -168,7 +172,7 @@ Therefore, the idea is to use the closest function to find vectors similar to <t
 			</ol>
 			<p><strong>Exercice 3:</strong> Bonus </p>
 			<ol>
-				<p><strong>Q1: </strong> Augment the dimension of the WE to 200 and retrain them (1pt)</p>
+				<p><strong>Q1: </strong> Augment the dimension of the WE to 300 and retrain them (1pt)</p>
 				<p><strong>Q2: </strong> What are the impact on the analogies? (1pt)</p>
 			</ol>
 		</ol>
