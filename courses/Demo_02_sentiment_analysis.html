@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0073)https://cservan.github.io/tp3_POS_tagging.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>Demo 2: Deep Learning for NLP - Sentiment Analysis</title>
+<link href="chrome-extension://lnkdbjbjpnpjeciipoaflmpcddinpjjp/mytube.css" rel="stylesheet" type="text/css"><script src="chrome-extension://lnkdbjbjpnpjeciipoaflmpcddinpjjp/mutationObserver.js"></script><script src="chrome-extension://lnkdbjbjpnpjeciipoaflmpcddinpjjp/mytube.js"></script></head>
+<body lang="fr-FR" text="#000000" dir="ltr" style="background: transparent">
+<h1 align="center">Demo 2: Deep Learning for NLP - Sentiment Analysis</h1>
+<h3 align="center">Christophe Servan
+</h3>
+	<hr>
+	<h2>Introduction</h2>
+In this Demo, you will build a sentiment analysis system for Twitter. 
+The task consists in predicting whether a tweet is positive, negative or neutral regarding its content.
+Typically, sentiment polarity is conveyed by a combination of factors:
+<ul>
+<li>
+An expression of subjectivity such as reference to first person pronouns or
+possessives
+</li>
+<li>
+The use of sentiment words such as "like", "best", "boring", "hated"...
+</li>
+<li>
+The modulation of these aspects by markers such as "hardly", "not"
+</li>
+</ul>
+Therefore, typical sentiment analysis systems rely on word lists for capturing subjectivity and sentiment bearing words, and word n-grams or parse trees for
+capturing modulation effects.
+Since the quantity of data available for training is rather scarce, a number of approaches can be applied for making a system that generalizes well.</br>
+For instance, words can be replaced by part-of-speech tags, or word classes.
+Sentiment-bearing word-lists can be extended through collocation statistics.
+Tweets have a few specificities that make the sentiment analysis task more
+challenging. They contain very informal language with a lot of typos and colloquial language. 
+Smileys can be an extra source of information but they are highly variable. 
+Hashtags and user names are marked (along with other Twitter specific abbreviations). 
+Word morphology can be modified to express sentiment (such as "loooooooool"). 
+Therefore, formal linguistic analysis such as parsing and word lists are unlikely to be very helpful, but deep learning approaches can help dealing with that variability.
+
+	<h2>Data</h2>
+	
+	<ul>
+		<li>Use data contained in the file (download <a href="https://cservan.github.io/data/tp_sentiment_analysis.tar.gz">here</a>).
+		</li><li>Decompress then using <tt>tar</tt>:<pre>tar xvfz tp_sentiment_analysis.tar.gz </pre> 
+	</li></ul>
+	<hr>
+	<h2>Report
+	</h2>
+	<p>You should send me your report <u><b>the day before the next session</b></u> using <b>PDF</b> format
+	at the address christophe_dot_servan_at_epita_dot_fr (replace
+	_dot_ and _at_ by dots and at, respectively) </p><p>
+	<b><em>Important remarks:</em></b>
+	</p><ul>
+                <li>If you encounter some issues, feel free to send me an email, I'll answer you ASAP;
+                </li><li>jupyternotes and others will be ignored. I want you to write a report, not a script. This also means you have to put your name on it and to do an effort of presentation! ;-)
+                </li><li>The report mark is important for the final course mark ;
+                </li><li>You have to report working in groups, if you did so (ask me before) ;
+                </li><li>If you send me your report lately, you will be penalised ;
+                </li><li>Plagianism equal to zero ;
+                </li><li>No report equal to zero ;
+	</li></ul>
+	<p></p>
+	<hr>
+	<h2>Work to do</h2>
+	<ol>
+		<ol>
+			This demo will train you to manipulate a classifier using a neural network approach
+			<ul>
+				<li>Fristly you will process and load your data
+				</li><li>Then you will reuse a word embeddings model to perform the sentiment analysis
+			</li></ul>
+        </ol>
+	</ol>
+	<h3>I. Read data</h3>
+	<ol>
+		<p>In data downloaded you will use the file <tt>sanders-twitter-sentiment.csv</tt>. This file contains tweets associated to 4 classes: "positive",
+"negative", "neutral" or "irrelevant". The main idea is to train a sentiment analysis system considering this task as a classification task. The file contains 5,513 annotated tweets in comma separated values format. Only the fourth and the fifth columns interest us in this demo.</p>
+		
+		<ol>
+			<p><strong>Exercice 1:</strong> Load and process data.
+			</p><ol>
+				<p><strong>Q1:</strong> Load the CSV file using the <tt>csv</tt> import in python. (1pt)</p>
+				<p><strong>Q2:</strong> Produce a python list of pre-processed tweets using the script <tt>preprocess_twitter.py</tt> (1pt)</p>
+				 </ol>
+			<p></p>
+			<p><strong>Exercice 1:</strong> Vectorize data.</p>
+            <p>For vectorizing tweet texts, first you can use the tokenizer provided in keras.
+It splits sentences into words and maps them to ids between 1 and the number
+of words in the lexicon. The tokenizer can be restricted to the most frequent
+words in the texts with the nb_words parameter.</p>
+<p>
+Then, the next stage consists in padding the sequences with word 0 to a
+given maximum length (trimming them if they are longer than the provided
+maxlen parameter) with the pad_sequences function. It returns a matrix of
+shape (number of examples, max length) which contains integers (word ids).
+The word mapping can be found in <tt>tokenizer.word_index</tt>.</p>
+			<ol>
+				<p><strong>Q1:</strong> Use these python lines to process data and labels: (1pt)
+<pre>
+from keras.preprocessing.text import Tokenizer
+from keras.preprocessing.sequence import pad_sequences
+
+tokenizer = Tokenizer(nb_words=10000)
+tokenizer.fit_on_texts(texts)
+sequences = tokenizer.texts_to_sequences(texts)
+data = pad_sequences(sequences, maxlen=32)
+vocab = tokenizer.word_index
+vocab['&lt;eos&gt;'] = 0                
+</pre>
+                </p>
+				<p><strong>Q2:</strong> Now you should have two numpy arrays which shape are (5513, 32) and (5513, 4) for tweets and labels respectively. (1pt)</p>
+                <p> Now cut this coprus in two parts one for the training and one for the evaluation. The training set (x_train and y_train) should contains 4000 utterances and the validation set (x_val, y_val) should have the rest of the data. Feel free to shuffle data.</p>
+				 </ol>
+			<p></p>
+        </ol>
+	</ol>
+	<h3>II. Train and evaluate the model</h3>
+	<ol>
+		<p>
+        Unlike in the previous demo, you will not train word embeddings (WE), but use pre-trained WE. These WE are contained in the file <tt>glove.twitter.27B.100d.filtered.txt</tt> They have been provided by Stanford though the <a href="http://nlp.stanford.edu/projects/glove/">GloVe project</a>.
+		</p> 
+        <p>
+        Use the <tt>embeddings.py</tt> module to load the WE into a numpy matrix:
+<pre>weights = embedding.load(vocab, 100,'glove.twitter.27B.100d.filtered.txt')
+</pre>
+        </p>
+   <p>The embedding layer can be initialized with the embeddings we loaded from
+the web. We won't finetune them as we want to use them with words that are
+not in the training data. For recurrent unit, we will use Gated Recurrent Units
+(GRU) because they have less parameters and are faster to train than LSTM,
+but the later would also be a good choice. Their size is fixed to 64, but that's
+an hyperparameter that could be modified to improve the classifier.
+</p>
+		<ol>
+			<p><strong>Exercice 1:</strong> Use RNN to train the first classifier:</p>
+<pre>
+from keras.layers import Embedding, Input, GRU, Dense
+from keras.models import Model
+# 100-dim embeddings initialized with GloVe,
+# over sequences of size 32, and not fine tuneable
+embedding_layer = Embedding(len(vocab), 100, weights=[weights],input_length=32, trainable=False)
+sequence_input = Input(shape=(32,), dtype='int32')
+embedded_sequences = embedding_layer(sequence_input)
+x = GRU(64)(embedded_sequences)
+preds = Dense(labels.shape[1], activation='softmax')(x)
+model = Model(sequence_input, preds)
+model.compile(loss='categorical_crossentropy',optimizer='Nadam', metrics=['acc'])
+model.fit(x_train, y_train, validation_data=(x_val, y_val),nb_epoch=10, batch_size=64, shuffle=True)            
+</pre>
+			<ol>
+				<p><strong>Q1: </strong> write in Python the necessary script train the model (3pt)</p>
+                <p></p>
+				<p><strong>Q2: </strong> evaluate the model using precision, recall, F1-measure, and accuracy metrics. (4pt)</p>		 
+                <p></p>
+				<p><strong>Q3: </strong> How many epochs are needed to reach at least 80% of accuracy? (2pt)</p>
+			</ol>
+		</ol>
+		<ol>
+			<p><strong>Exercice 2:</strong> Use CNN to train the second classifier:</p>
+<p>
+The recurrent model has the downside that its hidden state of fixed size might
+be suboptimal for building representations of the beginning of the input, and
+might be too order-dependent. An alternative to this model is convolutional
+neural networks. They consist of a convolution filter which is repeated over a
+window moving along the input. They act a bit like a bag of n-grams which
+can select relevant word n-grams. In the following example, we use 128 filters
+of size of 3 over the input, with global max pooling, and then atten the results
+and pass it through a dense layer with a softmax activation to generate the
+probability distribution over labels :
+</p>
+<pre>
+from keras.layers import Conv1D, MaxPooling1D, Flatten
+
+sequence_input = Input(shape=(32,), dtype='int32')
+embedded_sequences = embedding_layer(sequence_input)
+x = Conv1D(128, 3, activation='relu')(embedded_sequences)
+x = MaxPooling1D(3)(x) # global max pooling
+x = Flatten()(x)
+preds = Dense(labels.shape[1], activation='softmax')(x)
+
+model = Model(sequence_input, preds)
+           
+</pre>
+<p>
+The model should be a bit faster to train than the recurrent one, but it leads to a
+lower accuracy. In particular, as accuracy on the training set raises to 99%, it
+reaches a high value on the validation set and then diminishes in later epochs.
+Clearly, the model is over fitting the training data, leading to poor generalization
+performance. 
+It might be a good idea to extend that model with a regularization technique, such as for instance dropout.
+</p>
+			<ol>
+				<p><strong>Q1: </strong> write in Python the necessary script train the model (3pts)</p>
+                <p></p>
+				<p><strong>Q2: </strong> evaluate the model using precision, recall, F1-measure, and accuracy metrics. (4pts)</p>		 
+                <p></p>
+				<p><strong>Q3: (optional)</strong> Add a regularization method to the code and observe the results. (3pts)</p>
+			</ol>
+		</ol>
+	</ol>
+</ol>
+ <br> <br>The End.
+ 
+ 
+
+</body></html>
