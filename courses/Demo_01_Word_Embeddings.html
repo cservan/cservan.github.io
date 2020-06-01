@@ -62,7 +62,7 @@
 		
 		<p><b>WARNING:</b> Read carefully the documentation available here: <a href="https://github.com/facebookresearch/fastText">https://github.com/facebookresearch/fastText</a></p>
 		<ol>
-			<p><strong>Exercice 1:</strong> Train two models for each dataset, with a vector dimension of 50, 5iteration of training and a window size of 15.
+			<p><strong>Exercice 1:</strong> Train two models for each dataset, with a vector dimension of 50, 5 epochs of training and a window size of 5.
 			</p><ol>
 				<p><strong>Q1:</strong> Train a cbow model, explain your command line (1pt)</p>
 				<p><strong>Q2:</strong> Train a skip-gram model, explain your command line (1pt)</p>
@@ -153,7 +153,7 @@ Then we can use some numpy trick to recover the indices of the n highest scores.
 		<p> Word analogies can be exposed by translating a word vector in a direction that
 corresponds to a linguistic or semantic relationship between two other words.</br>
 So if we have <tt>w1</tt> and <tt>w2</tt> in relation <tt>R(w1,w2)</tt>, we can compute the relation
-<tt>r=vec(w2)-vec(W1)</tt>, and then apply this relation to the vector of another
+<tt>r = vec(w2)-vec(W1)</tt>, and then apply this relation to the vector of another
 word <tt>vec(w3)</tt>. </br>
 The word closest to <tt>vec(w3)+r</tt> should also exhibit the same relation.</br>
 Therefore, the idea is to use the closest function to find vectors similar to <tt>vec(w2)-vec(w1)+vec(w3)</tt>.
