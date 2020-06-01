@@ -1,4 +1,4 @@
-<html>
+ï»¿<html>
 
 <head>
 <meta http-equiv=Content-Type content="text/html; charset=UTF-8">
@@ -46,19 +46,15 @@ ul
 <div class=WordSection1>
 
 <p class=MsoNormal align=center style='text-align:center;line-height:normal'><b><span
-lang=EN-GB style='font-size:24.0pt;font-family:"Times New Roman",serif;
+  style='font-size:24.0pt;font-family:"Times New Roman",serif;
 color:black'>Exercise 1: Using Unix commands to analyze text documents &amp;
 introduction to UNICODE</span></b></p>
 
 <p class=MsoNormal align=center style='text-align:center;line-height:normal'><b><span
-lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
-color:black'>Très&nbsp;largement&nbsp;inspiré&nbsp;de &quot;Unix for
-Poets&quot; de Kenneth Ward Church, IBM Research,&nbsp;kwchurch&nbsp;(AT)
+  style='font-size:13.5pt;font-family:"Times New Roman",serif;
+color:black'>Inspired from &quot;Unix for
+Poets&quot; from Kenneth Ward Church, IBM Research,&nbsp;kwchurch&nbsp;(AT)
 us.ibm.com</span></b></p>
-
-<p class=MsoNormal align=center style='text-align:center;line-height:normal'><span
-lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif;
-color:black'>Adapted by Laurent Besacier and Carlos Ramisch</span></p>
 
 <p class=MsoNormal style='line-height:normal'><b><span style='font-size:18.0pt;
 font-family:"Times New Roman",serif;color:black'>Program</span></b></p>
@@ -68,7 +64,7 @@ font-family:"Times New Roman",serif;color:black'>Program</span></b></p>
      line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Count
      words in text</span></li>
  <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
-     line-height:normal'><span lang=EN-GB style='font-size:12.0pt;font-family:
+     line-height:normal'><span   style='font-size:12.0pt;font-family:
      "Times New Roman",serif'>Order a list of words by</span></li>
  <ul style='margin-top:0cm' type=circle>
   <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
@@ -77,10 +73,10 @@ font-family:"Times New Roman",serif;color:black'>Program</span></b></p>
       line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>alphabetical&nbsp;order</span></li>
  </ul>
  <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
-     line-height:normal'><span lang=EN-GB style='font-size:12.0pt;font-family:
+     line-height:normal'><span   style='font-size:12.0pt;font-family:
      "Times New Roman",serif'>Calculate&nbsp;occurrence&nbsp;and&nbsp;co-occurrence&nbsp;statistics</span></li>
  <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
-     line-height:normal'><span lang=EN-GB style='font-size:12.0pt;font-family:
+     line-height:normal'><span   style='font-size:12.0pt;font-family:
      "Times New Roman",serif'>Extract useful information from a dictionary</span></li>
  <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
      line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Transform
@@ -103,17 +99,17 @@ font-family:"Times New Roman",serif;color:black'>Tools</span></b></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
-     line-height:normal'><span lang=EN-GB style='font-size:10.0pt;font-family:
-     "Courier New"'>cat/head/tail</span><span lang=EN-GB style='font-size:12.0pt;
+     line-height:normal'><span   style='font-size:10.0pt;font-family:
+     "Courier New"'>cat/head/tail</span><span   style='font-size:12.0pt;
      font-family:"Times New Roman",serif'>: display (the whole / the beginning
      / the end) of a file on the screen</span></li>
  <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
-     line-height:normal'><span lang=EN-GB style='font-size:10.0pt;font-family:
-     "Courier New"'>less</span><span lang=EN-GB style='font-size:12.0pt;
+     line-height:normal'><span   style='font-size:10.0pt;font-family:
+     "Courier New"'>less</span><span   style='font-size:12.0pt;
      font-family:"Times New Roman",serif'>: display a file with scrolling</span></li>
  <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
-     line-height:normal'><span lang=EN-GB style='font-size:10.0pt;font-family:
-     "Courier New"'>grep</span><span lang=EN-GB style='font-size:12.0pt;
+     line-height:normal'><span   style='font-size:10.0pt;font-family:
+     "Courier New"'>grep</span><span   style='font-size:12.0pt;
      font-family:"Times New Roman",serif'>: search for a pattern (regular
      expression)</span></li>
  <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
@@ -121,25 +117,25 @@ font-family:"Times New Roman",serif;color:black'>Tools</span></b></p>
      style='font-size:12.0pt;font-family:"Times New Roman",serif'>: sort the
      lines</span></li>
  <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
-     line-height:normal'><span lang=EN-GB style='font-size:10.0pt;font-family:
-     "Courier New"'>uniq&nbsp;-c</span><span lang=EN-GB style='font-size:12.0pt;
+     line-height:normal'><span   style='font-size:10.0pt;font-family:
+     "Courier New"'>uniq&nbsp;-c</span><span   style='font-size:12.0pt;
      font-family:"Times New Roman",serif'>: eliminate or count duplicates</span></li>
  <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
-     line-height:normal'><span lang=EN-GB style='font-size:10.0pt;font-family:
-     "Courier New"'>tr</span><span lang=EN-GB style='font-size:12.0pt;
+     line-height:normal'><span   style='font-size:10.0pt;font-family:
+     "Courier New"'>tr</span><span   style='font-size:12.0pt;
      font-family:"Times New Roman",serif'>: transpose or eliminate characters</span></li>
  <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
-     line-height:normal'><span lang=EN-GB style='font-size:10.0pt;font-family:
-     "Courier New"'>wc</span><span lang=EN-GB style='font-size:12.0pt;
+     line-height:normal'><span   style='font-size:10.0pt;font-family:
+     "Courier New"'>wc</span><span   style='font-size:12.0pt;
      font-family:"Times New Roman",serif'>: count lines, words and characters</span></li>
  <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
-     line-height:normal'><span lang=EN-GB style='font-size:10.0pt;font-family:
-     "Courier New"'>sed</span><span lang=EN-GB style='font-size:12.0pt;
+     line-height:normal'><span   style='font-size:10.0pt;font-family:
+     "Courier New"'>sed</span><span   style='font-size:12.0pt;
      font-family:"Times New Roman",serif'>: edit (replace, delete) a string
      with regular expressions</span></li>
  <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
-     line-height:normal'><span lang=EN-GB style='font-size:10.0pt;font-family:
-     "Courier New"'>awk</span><span lang=EN-GB style='font-size:12.0pt;
+     line-height:normal'><span   style='font-size:10.0pt;font-family:
+     "Courier New"'>awk</span><span   style='font-size:12.0pt;
      font-family:"Times New Roman",serif'>: language for examining and
      processing patterns</span></li>
  <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
@@ -151,11 +147,11 @@ font-family:"Times New Roman",serif;color:black'>Tools</span></b></p>
      style='font-size:12.0pt;font-family:"Times New Roman",serif'>:
      &quot;paste&quot; columns</span></li>
  <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
-     line-height:normal'><span lang=EN-GB style='font-size:10.0pt;font-family:
-     "Courier New"'>join</span><span lang=EN-GB style='font-size:12.0pt;
+     line-height:normal'><span   style='font-size:10.0pt;font-family:
+     "Courier New"'>join</span><span   style='font-size:12.0pt;
      font-family:"Times New Roman",serif'>: equivalent to SQL JOIN</span></li>
  <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
-     line-height:normal'><span lang=EN-GB style='font-size:12.0pt;font-family:
+     line-height:normal'><span   style='font-size:12.0pt;font-family:
      "Times New Roman",serif'>Web browser: Mozilla Firefox, Google Chrome
      or&nbsp;Chromium</span></li>
  <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
@@ -163,9 +159,9 @@ font-family:"Times New Roman",serif;color:black'>Tools</span></b></p>
      editor</span></li>
  <ul style='margin-top:0cm' type=circle>
   <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
-      line-height:normal'><span lang=EN-GB style='font-size:12.0pt;font-family:
+      line-height:normal'><span   style='font-size:12.0pt;font-family:
       "Times New Roman",serif'>Ubuntu et&nbsp;Debian-like:&nbsp;</span><span
-      lang=EN-GB style='font-size:10.0pt;font-family:"Courier New"'>sudo&nbsp;apt-get
+        style='font-size:10.0pt;font-family:"Courier New"'>sudo&nbsp;apt-get
       install&nbsp;hexedit</span></li>
   <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
       line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Others:&nbsp;</span><span
@@ -180,35 +176,35 @@ font-family:"Times New Roman",serif;color:black'>Tools</span></b></p>
      font-family:"Courier New"'>iconv</span></li>
 </ul>
 
-<p class=MsoNormal style='line-height:normal'><b><span lang=EN-GB
+<p class=MsoNormal style='line-height:normal'><b><span  
 style='font-size:13.5pt;font-family:"Times New Roman",serif;color:black'>Suggestion</span></b><span
-lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
+  style='font-size:13.5pt;font-family:"Times New Roman",serif;
 color:black'>: always remember to read the&nbsp;tool's&nbsp;</span><span
-lang=EN-GB style='font-size:10.0pt;font-family:"Courier New";color:black'>man</span><span
-lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
+  style='font-size:10.0pt;font-family:"Courier New";color:black'>man</span><span
+  style='font-size:13.5pt;font-family:"Times New Roman",serif;
 color:black'>&nbsp;page&nbsp;if you have any doubts about the tool's parameters
-and functionality.&nbsp;For example, the&nbsp;</span><span lang=EN-GB
+and functionality.&nbsp;For example, the&nbsp;</span><span  
 style='font-size:10.0pt;font-family:"Courier New";color:black'>man&nbsp;wc</span><span
-lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
+  style='font-size:13.5pt;font-family:"Times New Roman",serif;
 color:black'>&nbsp;command&nbsp;indicates how you can count only lines (</span><span
-lang=EN-GB style='font-size:10.0pt;font-family:"Courier New";color:black'>-l</span><span
-lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
-color:black'>) or only words (</span><span lang=EN-GB style='font-size:10.0pt;
-font-family:"Courier New";color:black'>-w</span><span lang=EN-GB
+  style='font-size:10.0pt;font-family:"Courier New";color:black'>-l</span><span
+  style='font-size:13.5pt;font-family:"Times New Roman",serif;
+color:black'>) or only words (</span><span   style='font-size:10.0pt;
+font-family:"Courier New";color:black'>-w</span><span  
 style='font-size:13.5pt;font-family:"Times New Roman",serif;color:black'>) in a
 file.</span></p>
 
-<p class=MsoNormal style='line-height:normal'><b><span lang=EN-GB
+<p class=MsoNormal style='line-height:normal'><b><span  
 style='font-size:18.0pt;font-family:"Times New Roman",serif;color:black'>Input
 / output redirection</span></b></p>
 
-<p class=MsoNormal style='line-height:normal'><span lang=EN-GB
+<p class=MsoNormal style='line-height:normal'><span  
 style='font-size:13.5pt;font-family:"Times New Roman",serif;color:black'>By
-default, most tools read the input (</span><span lang=EN-GB style='font-size:
-10.0pt;font-family:"Courier New";color:black'>stdin</span><span lang=EN-GB
+default, most tools read the input (</span><span   style='font-size:
+10.0pt;font-family:"Courier New";color:black'>stdin</span><span  
 style='font-size:13.5pt;font-family:"Times New Roman",serif;color:black'>) from
-the keyboard and write the output (</span><span lang=EN-GB style='font-size:
-10.0pt;font-family:"Courier New";color:black'>stdout</span><span lang=EN-GB
+the keyboard and write the output (</span><span   style='font-size:
+10.0pt;font-family:"Courier New";color:black'>stdout</span><span  
 style='font-size:13.5pt;font-family:"Times New Roman",serif;color:black'>) to
 the screen.&nbsp;You can&nbsp;redirect&nbsp;inputs and outputs to files using
 the following commands:</span></p>
@@ -221,7 +217,7 @@ the following commands:</span></p>
   </td>
   <td style='padding:.75pt .75pt .75pt .75pt'>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal'><span lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif'>&nbsp;Read
+  normal'><span   style='font-size:12.0pt;font-family:"Times New Roman",serif'>&nbsp;Read
   from an input file</span></p>
   </td>
  </tr>
@@ -232,7 +228,7 @@ the following commands:</span></p>
   </td>
   <td style='padding:.75pt .75pt .75pt .75pt'>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal'><span lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif'>&nbsp;Write
+  normal'><span   style='font-size:12.0pt;font-family:"Times New Roman",serif'>&nbsp;Write
   to an output file</span></p>
   </td>
  </tr>
@@ -243,39 +239,39 @@ the following commands:</span></p>
   </td>
   <td style='padding:.75pt .75pt .75pt .75pt'>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal'><span lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif'>&nbsp;Write&nbsp;the
+  normal'><span   style='font-size:12.0pt;font-family:"Times New Roman",serif'>&nbsp;Write&nbsp;the
   output of the previous command to the input of the next command (pipe)</span></p>
   </td>
  </tr>
 </table>
 
-<p class=MsoNormal style='line-height:normal'><b><span lang=EN-GB
+<p class=MsoNormal style='line-height:normal'><b><span  
 style='font-size:18.0pt;font-family:"Times New Roman",serif;color:black'>Data</span></b></p>
 
-<p class=MsoNormal style='line-height:normal'><b><span lang=EN-GB
+<p class=MsoNormal style='line-height:normal'><b><span  
 style='font-size:13.5pt;font-family:"Times New Roman",serif;color:black'>File
 for exercises:&nbsp;</span></b><span lang=EN-US><a
-href="https://cservan.github.io/data/RADIOS.txt.zip"><span lang=EN-GB
+href="https://cservan.github.io/data/RADIOS.txt.zip"><span  
 style='font-size:13.5pt;font-family:"Times New Roman",serif;color:purple'>RADIOS.txt</span></a></span><span
-lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
+  style='font-size:13.5pt;font-family:"Times New Roman",serif;
 color:black'>&nbsp;or&nbsp;</span><span lang=EN-US><a
-href="https://cservan.github.io/data/RADIOS.txt.utf8.zip"><span lang=EN-GB
+href="https://cservan.github.io/data/RADIOS.txt.utf8.zip"><span  
 style='font-size:13.5pt;font-family:"Times New Roman",serif;color:purple'>RADIOS.txt.UTF-8</span></a></span><span
-lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
+  style='font-size:13.5pt;font-family:"Times New Roman",serif;
 color:black'>&nbsp;depending on the operating system available here.&nbsp;This
 file contains&nbsp;transcripts&nbsp;of radio recordings:&nbsp;Franceinter, RFI,...</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-normal'><span lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
+normal'><span   style='font-size:13.5pt;font-family:"Times New Roman",serif;
 color:black'>X</span></p>
 
-<p class=MsoNormal style='line-height:normal'><span lang=EN-GB
+<p class=MsoNormal style='line-height:normal'><span  
 style='font-size:13.5pt;font-family:"Times New Roman",serif;color:black'>For
 each exercise, in addition to answering the questions, also you need to explain
 the sequence of commands used and show an extract of the result using the
-commands&nbsp;</span><span lang=EN-GB style='font-size:10.0pt;font-family:"Courier New";
-color:black'>head</span><span lang=EN-GB style='font-size:13.5pt;font-family:
-"Times New Roman",serif;color:black'>&nbsp;and/or&nbsp;</span><span lang=EN-GB
+commands&nbsp;</span><span   style='font-size:10.0pt;font-family:"Courier New";
+color:black'>head</span><span   style='font-size:13.5pt;font-family:
+"Times New Roman",serif;color:black'>&nbsp;and/or&nbsp;</span><span  
 style='font-size:10.0pt;font-family:"Courier New";color:black'>less</span></p>
 
 <div class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
@@ -286,30 +282,30 @@ text-align:center;line-height:normal'><span style='font-size:13.5pt;font-family:
 
 </span></div>
 
-<p class=MsoNormal style='line-height:normal'><b><span lang=EN-GB
+<p class=MsoNormal style='line-height:normal'><b><span  
 style='font-size:18.0pt;font-family:"Times New Roman",serif;color:black'>Exercises</span></b></p>
 
-<p class=MsoNormal style='line-height:normal'><b><span lang=EN-GB
+<p class=MsoNormal style='line-height:normal'><b><span  
 style='font-size:13.5pt;font-family:"Times New Roman",serif;color:black'>Exercise
-0</span></b><span lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
+0</span></b><span   style='font-size:13.5pt;font-family:"Times New Roman",serif;
 color:black'>: Transform all RADIOS.txt text into capital letters</span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
-     line-height:normal'><b><span lang=EN-GB style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>Q1</span></b><span lang=EN-GB
+     line-height:normal'><b><span   style='font-size:12.0pt;
+     font-family:"Times New Roman",serif'>Q1</span></b><span  
      style='font-size:12.0pt;font-family:"Times New Roman",serif'>: Find
      another equivalent command</span></li>
  <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
-     line-height:normal'><b><span lang=EN-GB style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>Q2</span></b><span lang=EN-GB
+     line-height:normal'><b><span   style='font-size:12.0pt;
+     font-family:"Times New Roman",serif'>Q2</span></b><span  
      style='font-size:12.0pt;font-family:"Times New Roman",serif'>: Find an
      order that takes accented characters into account</span></li>
 </ul>
 
-<p class=MsoNormal style='line-height:normal'><b><span lang=EN-GB
+<p class=MsoNormal style='line-height:normal'><b><span  
 style='font-size:13.5pt;font-family:"Times New Roman",serif;color:black'>Exercise
-1</span></b><span lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
+1</span></b><span   style='font-size:13.5pt;font-family:"Times New Roman",serif;
 color:black'>: Find the sequence of instructions that allows you to count words
 in a text</span></p>
 
@@ -318,51 +314,51 @@ in a text</span></p>
      line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Input:
      RADIOS.txt text file</span></li>
  <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
-     line-height:normal'><span lang=EN-GB style='font-size:12.0pt;font-family:
+     line-height:normal'><span   style='font-size:12.0pt;font-family:
      "Times New Roman",serif'>Output: list of words with their number of
      appearances in the text (RADIOS.hist)</span></li>
 </ul>
 
-<p class=MsoNormal style='line-height:normal'><span lang=EN-GB
+<p class=MsoNormal style='line-height:normal'><span  
 style='font-size:13.5pt;font-family:"Times New Roman",serif;color:black'>Help:
-use</span><span lang=EN-GB style='font-size:10.0pt;font-family:"Courier New";
-color:black'>&nbsp;tr</span><span lang=EN-GB style='font-size:13.5pt;
-font-family:"Times New Roman",serif;color:black'>,</span><span lang=EN-GB
+use</span><span   style='font-size:10.0pt;font-family:"Courier New";
+color:black'>&nbsp;tr</span><span   style='font-size:13.5pt;
+font-family:"Times New Roman",serif;color:black'>,</span><span  
 style='font-size:10.0pt;font-family:"Courier New";color:black'>&nbsp;sort</span><span
-lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
-color:black'>&nbsp;and</span><span lang=EN-GB style='font-size:10.0pt;
-font-family:"Courier New";color:black'>&nbsp;uniq</span><span lang=EN-GB
+  style='font-size:13.5pt;font-family:"Times New Roman",serif;
+color:black'>&nbsp;and</span><span   style='font-size:10.0pt;
+font-family:"Courier New";color:black'>&nbsp;uniq</span><span  
 style='font-size:13.5pt;font-family:"Times New Roman",serif;color:black'>,
 think of &quot;piping&quot; (|) the instructions</span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
-     line-height:normal'><b><span lang=EN-GB style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>Q1</span></b><span lang=EN-GB
+     line-height:normal'><b><span   style='font-size:12.0pt;
+     font-family:"Times New Roman",serif'>Q1</span></b><span  
      style='font-size:12.0pt;font-family:"Times New Roman",serif'>: What word
      appears exactly 1,732 times in this text?</span></li>
  <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
-     line-height:normal'><b><span lang=EN-GB style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>Q2</span></b><span lang=EN-GB
+     line-height:normal'><b><span   style='font-size:12.0pt;
+     font-family:"Times New Roman",serif'>Q2</span></b><span  
      style='font-size:12.0pt;font-family:"Times New Roman",serif'>: How many
      times does the word &quot;orange&quot; appear in this text?</span></li>
 </ul>
 
-<p class=MsoNormal style='line-height:normal'><b><span lang=EN-GB
+<p class=MsoNormal style='line-height:normal'><b><span  
 style='font-size:13.5pt;font-family:"Times New Roman",serif;color:black'>Exercise
-2</span></b><span lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
-color:black'>: Sort the words (</span><span lang=EN-GB style='font-size:10.0pt;
-font-family:"Courier New";color:black'>sort</span><span lang=EN-GB
+2</span></b><span   style='font-size:13.5pt;font-family:"Times New Roman",serif;
+color:black'>: Sort the words (</span><span   style='font-size:10.0pt;
+font-family:"Courier New";color:black'>sort</span><span  
 style='font-size:13.5pt;font-family:"Times New Roman",serif;color:black'>)</span></p>
 
-<p class=MsoNormal style='line-height:normal'><span lang=EN-GB
+<p class=MsoNormal style='line-height:normal'><span  
 style='font-size:13.5pt;font-family:"Times New Roman",serif;color:black'>See
-page&nbsp;</span><span lang=EN-GB style='font-size:10.0pt;font-family:"Courier New";
-color:black'>man</span><span lang=EN-GB style='font-size:13.5pt;font-family:
-"Times New Roman",serif;color:black'>&nbsp;of&nbsp;</span><span lang=EN-GB
+page&nbsp;</span><span   style='font-size:10.0pt;font-family:"Courier New";
+color:black'>man</span><span   style='font-size:13.5pt;font-family:
+"Times New Roman",serif;color:black'>&nbsp;of&nbsp;</span><span  
 style='font-size:10.0pt;font-family:"Courier New";color:black'>fate</span></p>
 
-<p class=MsoNormal style='line-height:normal'><span lang=EN-GB
+<p class=MsoNormal style='line-height:normal'><span  
 style='font-size:13.5pt;font-family:"Times New Roman",serif;color:black'>Examples</span></p>
 
 <table class=MsoNormalTable border=0 cellpadding=0>
@@ -416,7 +412,7 @@ style='font-size:13.5pt;font-family:"Times New Roman",serif;color:black'>Example
   </td>
   <td style='padding:.75pt .75pt .75pt .75pt'>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal'><span lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif'>start&nbsp;at
+  normal'><span   style='font-size:12.0pt;font-family:"Times New Roman",serif'>start&nbsp;at
   field 1 (the first is field 0)</span></p>
   </td>
  </tr>
@@ -428,7 +424,7 @@ style='font-size:13.5pt;font-family:"Times New Roman",serif;color:black'>Example
   </td>
   <td style='padding:.75pt .75pt .75pt .75pt'>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal'><span lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif'>start&nbsp;at
+  normal'><span   style='font-size:12.0pt;font-family:"Times New Roman",serif'>start&nbsp;at
   the 50<sup>th</sup>&nbsp;character</span></p>
   </td>
  </tr>
@@ -440,7 +436,7 @@ style='font-size:13.5pt;font-family:"Times New Roman",serif;color:black'>Example
   </td>
   <td style='padding:.75pt .75pt .75pt .75pt'>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal'><span lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif'>start&nbsp;at
+  normal'><span   style='font-size:12.0pt;font-family:"Times New Roman",serif'>start&nbsp;at
   5<sup>th</sup>&nbsp;character of the field 1</span></p>
   </td>
  </tr>
@@ -448,31 +444,31 @@ style='font-size:13.5pt;font-family:"Times New Roman",serif;color:black'>Example
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
-     line-height:normal'><b><span lang=EN-GB style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>Q1</span></b><span lang=EN-GB
+     line-height:normal'><b><span   style='font-size:12.0pt;
+     font-family:"Times New Roman",serif'>Q1</span></b><span  
      style='font-size:12.0pt;font-family:"Times New Roman",serif'>: Sort the
      words of RADIO.txt by frequency of appearance</span></li>
  <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
-     line-height:normal'><b><span lang=EN-GB style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>Q2</span></b><span lang=EN-GB
+     line-height:normal'><b><span   style='font-size:12.0pt;
+     font-family:"Times New Roman",serif'>Q2</span></b><span  
      style='font-size:12.0pt;font-family:"Times New Roman",serif'>: Sort the
      words of RADIO.txt in alphabetical order</span></li>
  <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
-     line-height:normal'><b><span lang=EN-GB style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>Q3</span></b><span lang=EN-GB
+     line-height:normal'><b><span   style='font-size:12.0pt;
+     font-family:"Times New Roman",serif'>Q3</span></b><span  
      style='font-size:12.0pt;font-family:"Times New Roman",serif'>: Sort the
      words of RADIO.txt in &quot;rhymic&quot; order (example, put together all
      the words which end with &quot;-ment&quot;.&nbsp;<b>Help</b>: use the
-     command&nbsp;unix&nbsp;</span><span lang=EN-GB style='font-size:10.0pt;
+     command&nbsp;unix&nbsp;</span><span   style='font-size:10.0pt;
      font-family:"Courier New"'>rev</span></li>
 </ul>
 
-<p class=MsoNormal style='line-height:normal'><b><span lang=EN-GB
+<p class=MsoNormal style='line-height:normal'><b><span  
 style='font-size:13.5pt;font-family:"Times New Roman",serif;color:black'>Exercise
-3</span></b><span lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
+3</span></b><span   style='font-size:13.5pt;font-family:"Times New Roman",serif;
 color:black'>:&nbsp;Co-occurrences&nbsp;of words or&nbsp;bigrams</span></p>
 
-<p class=MsoNormal style='line-height:normal'><span lang=EN-GB
+<p class=MsoNormal style='line-height:normal'><span  
 style='font-size:13.5pt;font-family:"Times New Roman",serif;color:black'>Find
 and count all the&nbsp;bigrams&nbsp;text RADIOS.txt</span></p>
 
@@ -481,56 +477,56 @@ and count all the&nbsp;bigrams&nbsp;text RADIOS.txt</span></p>
      line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Input:
      RADIOS.txt text file</span></li>
  <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
-     line-height:normal'><span lang=EN-GB style='font-size:12.0pt;font-family:
+     line-height:normal'><span   style='font-size:12.0pt;font-family:
      "Times New Roman",serif'>Output: statistics file where each line is of the
      form &quot;word1 word2 nb&quot;</span></li>
 </ul>
 
-<p class=MsoNormal style='line-height:normal'><span lang=EN-GB
+<p class=MsoNormal style='line-height:normal'><span  
 style='font-size:13.5pt;font-family:"Times New Roman",serif;color:black'>Do the
 same for n-grams (n = 2,3,4).</span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
-     line-height:normal'><b><span lang=EN-GB style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>Q1</span></b><span lang=EN-GB
+     line-height:normal'><b><span   style='font-size:12.0pt;
+     font-family:"Times New Roman",serif'>Q1</span></b><span  
      style='font-size:12.0pt;font-family:"Times New Roman",serif'>: How many
      times does the 2-gram &quot;it is&quot; appear in this text?</span></li>
  <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
-     line-height:normal'><b><span lang=EN-GB style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>Q2</span></b><span lang=EN-GB
+     line-height:normal'><b><span   style='font-size:12.0pt;
+     font-family:"Times New Roman",serif'>Q2</span></b><span  
      style='font-size:12.0pt;font-family:"Times New Roman",serif'>: How many
      separate 3-grams are found in this text?</span></li>
  <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
-     line-height:normal'><b><span lang=EN-GB style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>Q3</span></b><span lang=EN-GB
+     line-height:normal'><b><span   style='font-size:12.0pt;
+     font-family:"Times New Roman",serif'>Q3</span></b><span  
      style='font-size:12.0pt;font-family:"Times New Roman",serif'>: What is the
      most common 4-gram?</span></li>
 </ul>
 
-<p class=MsoNormal style='line-height:normal'><b><span lang=EN-GB
+<p class=MsoNormal style='line-height:normal'><b><span  
 style='font-size:13.5pt;font-family:"Times New Roman",serif;color:black'>Help</span></b><span
-lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
-color:black'>: use the&nbsp;</span><span lang=EN-GB style='font-size:10.0pt;
-font-family:"Courier New";color:black'>tail</span><span lang=EN-GB
+  style='font-size:13.5pt;font-family:"Times New Roman",serif;
+color:black'>: use the&nbsp;</span><span   style='font-size:10.0pt;
+font-family:"Courier New";color:black'>tail</span><span  
 style='font-size:13.5pt;font-family:"Times New Roman",serif;color:black'>&nbsp;and&nbsp;</span><span
-lang=EN-GB style='font-size:10.0pt;font-family:"Courier New";color:black'>paste</span><span
-lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
+  style='font-size:10.0pt;font-family:"Courier New";color:black'>paste</span><span
+  style='font-size:13.5pt;font-family:"Times New Roman",serif;
 color:black'>&nbsp;commands</span></p>
 
-<p class=MsoNormal style='line-height:normal'><b><span lang=EN-GB
+<p class=MsoNormal style='line-height:normal'><b><span  
 style='font-size:13.5pt;font-family:"Times New Roman",serif;color:black'>Exercise
-4</span></b><span lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
-color:black'>: filters (</span><span lang=EN-GB style='font-size:10.0pt;
-font-family:"Courier New";color:black'>grep</span><span lang=EN-GB
+4</span></b><span   style='font-size:13.5pt;font-family:"Times New Roman",serif;
+color:black'>: filters (</span><span   style='font-size:10.0pt;
+font-family:"Courier New";color:black'>grep</span><span  
 style='font-size:13.5pt;font-family:"Times New Roman",serif;color:black'>)</span></p>
 
-<p class=MsoNormal style='line-height:normal'><span lang=EN-GB
+<p class=MsoNormal style='line-height:normal'><span  
 style='font-size:13.5pt;font-family:"Times New Roman",serif;color:black'>See&nbsp;</span><span
-lang=EN-GB style='font-size:10.0pt;font-family:"Courier New";color:black'>man</span><span
-lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
-color:black'>&nbsp;page of&nbsp;</span><span lang=EN-GB style='font-size:10.0pt;
-font-family:"Courier New";color:black'>grep</span><span lang=EN-GB
+  style='font-size:10.0pt;font-family:"Courier New";color:black'>man</span><span
+  style='font-size:13.5pt;font-family:"Times New Roman",serif;
+color:black'>&nbsp;page of&nbsp;</span><span   style='font-size:10.0pt;
+font-family:"Courier New";color:black'>grep</span><span  
 style='font-size:13.5pt;font-family:"Times New Roman",serif;color:black'>.</span></p>
 
 <p class=MsoNormal style='line-height:normal'><span style='font-size:13.5pt;
@@ -544,7 +540,7 @@ font-family:"Times New Roman",serif;color:black'>Examples</span></p>
   </td>
   <td style='padding:.75pt .75pt .75pt .75pt'>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal'><span lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif'>lines&nbsp;containing
+  normal'><span   style='font-size:12.0pt;font-family:"Times New Roman",serif'>lines&nbsp;containing
   a capital letter</span></p>
   </td>
  </tr>
@@ -555,7 +551,7 @@ font-family:"Times New Roman",serif;color:black'>Examples</span></p>
   </td>
   <td style='padding:.75pt .75pt .75pt .75pt'>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal'><span lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif'>lines&nbsp;starting
+  normal'><span   style='font-size:12.0pt;font-family:"Times New Roman",serif'>lines&nbsp;starting
   with a capital letter</span></p>
   </td>
  </tr>
@@ -566,7 +562,7 @@ font-family:"Times New Roman",serif;color:black'>Examples</span></p>
   </td>
   <td style='padding:.75pt .75pt .75pt .75pt'>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal'><span lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif'>lines&nbsp;ending
+  normal'><span   style='font-size:12.0pt;font-family:"Times New Roman",serif'>lines&nbsp;ending
   with a capital letter</span></p>
   </td>
  </tr>
@@ -603,7 +599,7 @@ font-family:"Times New Roman",serif;color:black'>Examples</span></p>
   </td>
   <td style='padding:.75pt .75pt .75pt .75pt'>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal'><span lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif'>lines&nbsp;starting
+  normal'><span   style='font-size:12.0pt;font-family:"Times New Roman",serif'>lines&nbsp;starting
   with a vowel</span></p>
   </td>
  </tr>
@@ -614,7 +610,7 @@ font-family:"Times New Roman",serif;color:black'>Examples</span></p>
   </td>
   <td style='padding:.75pt .75pt .75pt .75pt'>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal'><span lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif'>lines&nbsp;ending
+  normal'><span   style='font-size:12.0pt;font-family:"Times New Roman",serif'>lines&nbsp;ending
   with a vowel</span></p>
   </td>
  </tr>
@@ -625,7 +621,7 @@ font-family:"Times New Roman",serif;color:black'>Examples</span></p>
  <tr>
   <td style='padding:.75pt .75pt .75pt .75pt'>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal'><span lang=EN-GB style='font-size:10.0pt;font-family:"Courier New"'>grip
+  normal'><span   style='font-size:10.0pt;font-family:"Courier New"'>grip
   -&nbsp;i&nbsp;'[aeiou]'</span></p>
   </td>
   <td style='padding:.75pt .75pt .75pt .75pt'>
@@ -637,24 +633,24 @@ font-family:"Times New Roman",serif;color:black'>Examples</span></p>
  <tr>
   <td style='padding:.75pt .75pt .75pt .75pt'>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal'><span lang=EN-GB style='font-size:10.0pt;font-family:"Courier New"'>grip
+  normal'><span   style='font-size:10.0pt;font-family:"Courier New"'>grip
   -&nbsp;i&nbsp;'^[aeiou]'</span></p>
   </td>
   <td style='padding:.75pt .75pt .75pt .75pt'>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal'><span lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif'>lines&nbsp;starting
+  normal'><span   style='font-size:12.0pt;font-family:"Times New Roman",serif'>lines&nbsp;starting
   with a vowel</span></p>
   </td>
  </tr>
  <tr>
   <td style='padding:.75pt .75pt .75pt .75pt'>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal'><span lang=EN-GB style='font-size:10.0pt;font-family:"Courier New"'>grip
+  normal'><span   style='font-size:10.0pt;font-family:"Courier New"'>grip
   -&nbsp;i&nbsp;'[aeiou]$'</span></p>
   </td>
   <td style='padding:.75pt .75pt .75pt .75pt'>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal'><span lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif'>lines&nbsp;ending
+  normal'><span   style='font-size:12.0pt;font-family:"Times New Roman",serif'>lines&nbsp;ending
   with a vowel</span></p>
   </td>
  </tr>
@@ -665,48 +661,48 @@ font-family:"Times New Roman",serif;color:black'>Examples</span></p>
  <tr>
   <td style='padding:.75pt .75pt .75pt .75pt'>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal'><span lang=EN-GB style='font-size:10.0pt;font-family:"Courier New"'>grip
+  normal'><span   style='font-size:10.0pt;font-family:"Courier New"'>grip
   -&nbsp;i&nbsp;'^[^aeiou]'</span></p>
   </td>
   <td style='padding:.75pt .75pt .75pt .75pt'>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal'><span lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif'>lines&nbsp;starting
+  normal'><span   style='font-size:12.0pt;font-family:"Times New Roman",serif'>lines&nbsp;starting
   with a non-vowel</span></p>
   </td>
  </tr>
  <tr>
   <td style='padding:.75pt .75pt .75pt .75pt'>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal'><span lang=EN-GB style='font-size:10.0pt;font-family:"Courier New"'>grip
+  normal'><span   style='font-size:10.0pt;font-family:"Courier New"'>grip
   -&nbsp;i&nbsp;'[^aeiou]$'</span></p>
   </td>
   <td style='padding:.75pt .75pt .75pt .75pt'>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal'><span lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif'>lines&nbsp;ending
+  normal'><span   style='font-size:12.0pt;font-family:"Times New Roman",serif'>lines&nbsp;ending
   with a non-vowel</span></p>
   </td>
  </tr>
  <tr>
   <td style='padding:.75pt .75pt .75pt .75pt'>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal'><span lang=EN-GB style='font-size:10.0pt;font-family:"Courier New"'>grep
+  normal'><span   style='font-size:10.0pt;font-family:"Courier New"'>grep
   -i&nbsp;'[aeiou].*[aeiou]'</span></p>
   </td>
   <td style='padding:.75pt .75pt .75pt .75pt'>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal'><span lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif'>lines&nbsp;with
+  normal'><span   style='font-size:12.0pt;font-family:"Times New Roman",serif'>lines&nbsp;with
   at least two vowels</span></p>
   </td>
  </tr>
  <tr>
   <td style='padding:.75pt .75pt .75pt .75pt'>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal'><span lang=EN-GB style='font-size:10.0pt;font-family:"Courier New"'>grep
+  normal'><span   style='font-size:10.0pt;font-family:"Courier New"'>grep
   -i&nbsp;'^[^aeiou]*[aeiou][^aeiou]*$'</span></p>
   </td>
   <td style='padding:.75pt .75pt .75pt .75pt'>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal'><span lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif'>lines&nbsp;with
+  normal'><span   style='font-size:12.0pt;font-family:"Times New Roman",serif'>lines&nbsp;with
   exactly one vowel</span></p>
   </td>
  </tr>
@@ -827,7 +823,7 @@ font-family:"Times New Roman",serif;color:black'>With regular expressions</span>
   </td>
   <td style='padding:.75pt .75pt .75pt .75pt'>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal'><span lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif'>&quot;x&quot;
+  normal'><span   style='font-size:12.0pt;font-family:"Times New Roman",serif'>&quot;x&quot;
   repeated 0 or more times</span></p>
   </td>
  </tr>
@@ -838,7 +834,7 @@ font-family:"Times New Roman",serif;color:black'>With regular expressions</span>
   </td>
   <td style='padding:.75pt .75pt .75pt .75pt'>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal'><span lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif'>&quot;x&quot;
+  normal'><span   style='font-size:12.0pt;font-family:"Times New Roman",serif'>&quot;x&quot;
   repeated 1 or more times</span></p>
   </td>
  </tr>
@@ -849,9 +845,9 @@ font-family:"Times New Roman",serif;color:black'>With regular expressions</span>
   </td>
   <td style='padding:.75pt .75pt .75pt .75pt'>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal'><span lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif'>&quot;x&quot;
-  or &quot;y&quot; (only&nbsp;</span><span lang=EN-GB style='font-size:10.0pt;
-  font-family:"Courier New"'>egrep</span><span lang=EN-GB style='font-size:
+  normal'><span   style='font-size:12.0pt;font-family:"Times New Roman",serif'>&quot;x&quot;
+  or &quot;y&quot; (only&nbsp;</span><span   style='font-size:10.0pt;
+  font-family:"Courier New"'>egrep</span><span   style='font-size:
   12.0pt;font-family:"Times New Roman",serif'>)</span></p>
   </td>
  </tr>
@@ -862,35 +858,35 @@ font-family:"Times New Roman",serif;color:black'>With regular expressions</span>
   </td>
   <td style='padding:.75pt .75pt .75pt .75pt'>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal'><span lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif'>impose&nbsp;rule&nbsp;previously&nbsp;(only&nbsp;</span><span
-  lang=EN-GB style='font-size:10.0pt;font-family:"Courier New"'>egrep</span><span
-  lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif'>)</span></p>
+  normal'><span   style='font-size:12.0pt;font-family:"Times New Roman",serif'>impose&nbsp;rule&nbsp;previously&nbsp;(only&nbsp;</span><span
+    style='font-size:10.0pt;font-family:"Courier New"'>egrep</span><span
+    style='font-size:12.0pt;font-family:"Times New Roman",serif'>)</span></p>
   </td>
  </tr>
 </table>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
-     line-height:normal'><b><span lang=EN-GB style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>Q1</span></b><span lang=EN-GB
+     line-height:normal'><b><span   style='font-size:12.0pt;
+     font-family:"Times New Roman",serif'>Q1</span></b><span  
      style='font-size:12.0pt;font-family:"Times New Roman",serif'>: How
      many&nbsp;has&nbsp;the&nbsp;words of 9 letters in RADIOS.txt?</span></li>
  <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
-     line-height:normal'><b><span lang=EN-GB style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>Q2</span></b><span lang=EN-GB
+     line-height:normal'><b><span   style='font-size:12.0pt;
+     font-family:"Times New Roman",serif'>Q2</span></b><span  
      style='font-size:12.0pt;font-family:"Times New Roman",serif'>:
      Are&nbsp;Has&nbsp;-it&nbsp;words without vowels in RADIOS.txt</span></li>
 </ul>
 
-<p class=MsoNormal style='line-height:normal'><b><span lang=EN-GB
+<p class=MsoNormal style='line-height:normal'><b><span  
 style='font-size:13.5pt;font-family:"Times New Roman",serif;color:black'>Exercise
-5:&nbsp;</span></b><span lang=EN-GB style='font-size:10.0pt;font-family:"Courier New";
-color:black'>Awk</span><span lang=EN-GB style='font-size:13.5pt;font-family:
+5:&nbsp;</span></b><span   style='font-size:10.0pt;font-family:"Courier New";
+color:black'>Awk</span><span   style='font-size:13.5pt;font-family:
 "Times New Roman",serif;color:black'>&nbsp;language</span></p>
 
-<p class=MsoNormal style='line-height:normal'><span lang=EN-GB
+<p class=MsoNormal style='line-height:normal'><span  
 style='font-size:10.0pt;font-family:"Courier New";color:black'>awk</span><span
-lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
+  style='font-size:13.5pt;font-family:"Times New Roman",serif;
 color:black'>&nbsp;is a language whose syntax is similar to C, and which allows
 operations to be performed on fields in a file where each line is of the type
 &quot;field1 field2 field3 field4...&quot;</span></p>
@@ -900,23 +896,23 @@ font-family:"Times New Roman",serif;color:black'>Example</span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
-     line-height:normal'><span lang=EN-GB style='font-size:10.0pt;font-family:
-     "Courier New"'>awk&nbsp;'{print&nbsp;$1}' </span><span lang=EN-GB
+     line-height:normal'><span   style='font-size:10.0pt;font-family:
+     "Courier New"'>awk&nbsp;'{print&nbsp;$1}' </span><span  
      style='font-size:12.0pt;font-family:"Times New Roman",serif'>selects the
-     first field in a file, equivalent to</span><span lang=EN-GB
+     first field in a file, equivalent to</span><span  
      style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;cut&nbsp;-f 1</span></li>
  <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
-     line-height:normal'><span lang=EN-GB style='font-size:10.0pt;font-family:
+     line-height:normal'><span   style='font-size:10.0pt;font-family:
      "Courier New"'>awk&nbsp;'$1 &gt; 100
-     {&nbsp;print&nbsp;$0}'&nbsp;RADIOS.hist</span><span lang=EN-GB
+     {&nbsp;print&nbsp;$0}'&nbsp;RADIOS.hist</span><span  
      style='font-size:12.0pt;font-family:"Times New Roman",serif'>&nbsp;displays
      the words whose number of occurrences is greater than 100 in RADIOS.txt</span></li>
 </ul>
 
-<p class=MsoNormal style='line-height:normal'><span lang=EN-GB
+<p class=MsoNormal style='line-height:normal'><span  
 style='font-size:13.5pt;font-family:"Times New Roman",serif;color:black'>It is
 possible to write the program in a file and after calling it, for example, by
-typing&nbsp;</span><span lang=EN-GB style='font-size:10.0pt;font-family:"Courier New";
+typing&nbsp;</span><span   style='font-size:10.0pt;font-family:"Courier New";
 color:black'>SelectPremierChamp.awk&nbsp;&lt;file</span></p>
 
 <p class=MsoNormal style='line-height:normal'><span style='font-size:13.5pt;
@@ -925,66 +921,66 @@ are:&gt;, &lt;, &gt; =, &lt;=, ==, !=, &amp;&amp;, ||</span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
-     line-height:normal'><b><span lang=EN-GB style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>Q1:</span></b><span lang=EN-GB
+     line-height:normal'><b><span   style='font-size:12.0pt;
+     font-family:"Times New Roman",serif'>Q1:</span></b><span  
      style='font-size:12.0pt;font-family:"Times New Roman",serif'>&nbsp;Find
      the bi-grams that appear exactly 13 times.</span></li>
  <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
-     line-height:normal'><b><span lang=EN-GB style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>Q2:</span></b><span lang=EN-GB
+     line-height:normal'><b><span   style='font-size:12.0pt;
+     font-family:"Times New Roman",serif'>Q2:</span></b><span  
      style='font-size:12.0pt;font-family:"Times New Roman",serif'>&nbsp;Find
      the palindromes in RADIOS.txt (words written in the same way from right to
      left or from left to right).</span></li>
 </ul>
 
-<p class=MsoNormal style='line-height:normal'><b><span lang=EN-GB
+<p class=MsoNormal style='line-height:normal'><b><span  
 style='font-size:13.5pt;font-family:"Times New Roman",serif;color:black'>Exercise
-6:</span></b><span lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
-color:black'>&nbsp;Replacement with&nbsp;</span><span lang=EN-GB
+6:</span></b><span   style='font-size:13.5pt;font-family:"Times New Roman",serif;
+color:black'>&nbsp;Replacement with&nbsp;</span><span  
 style='font-size:10.0pt;font-family:"Courier New";color:black'>sed</span></p>
 
-<p class=MsoNormal style='line-height:normal'><span lang=EN-GB
+<p class=MsoNormal style='line-height:normal'><span  
 style='font-size:13.5pt;font-family:"Times New Roman",serif;color:black'>See
-page&nbsp;</span><span lang=EN-GB style='font-size:10.0pt;font-family:"Courier New";
-color:black'>man</span><span lang=EN-GB style='font-size:13.5pt;font-family:
-"Times New Roman",serif;color:black'>&nbsp;of&nbsp;</span><span lang=EN-GB
+page&nbsp;</span><span   style='font-size:10.0pt;font-family:"Courier New";
+color:black'>man</span><span   style='font-size:13.5pt;font-family:
+"Times New Roman",serif;color:black'>&nbsp;of&nbsp;</span><span  
 style='font-size:10.0pt;font-family:"Courier New";color:black'>sed</span><span
-lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
+  style='font-size:13.5pt;font-family:"Times New Roman",serif;
 color:black'>.</span></p>
 
-<p class=MsoNormal style='line-height:normal'><span lang=EN-GB
+<p class=MsoNormal style='line-height:normal'><span  
 style='font-size:13.5pt;font-family:"Times New Roman",serif;color:black'>The&nbsp;</span><span
-lang=EN-GB style='font-size:10.0pt;font-family:"Courier New";color:black'>sed</span><span
-lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
+  style='font-size:10.0pt;font-family:"Courier New";color:black'>sed</span><span
+  style='font-size:13.5pt;font-family:"Times New Roman",serif;
 color:black'>&nbsp;tool&nbsp;allows you to replace text using regular
-expressions.&nbsp;Thus, the command&nbsp;</span><span lang=EN-GB
+expressions.&nbsp;Thus, the command&nbsp;</span><span  
 style='font-size:10.0pt;font-family:"Courier New";color:black'>sed&nbsp;'s/exp1/exp2/[options]'</span><span
-lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
-color:black'>&nbsp;will replace (</span><span lang=EN-GB style='font-size:10.0pt;
-font-family:"Courier New";color:black'>s</span><span lang=EN-GB
+  style='font-size:13.5pt;font-family:"Times New Roman",serif;
+color:black'>&nbsp;will replace (</span><span   style='font-size:10.0pt;
+font-family:"Courier New";color:black'>s</span><span  
 style='font-size:13.5pt;font-family:"Times New Roman",serif;color:black'>) the
-expression&nbsp;</span><span lang=EN-GB style='font-size:10.0pt;font-family:
-"Courier New";color:black'>exp1</span><span lang=EN-GB style='font-size:13.5pt;
+expression&nbsp;</span><span   style='font-size:10.0pt;font-family:
+"Courier New";color:black'>exp1</span><span   style='font-size:13.5pt;
 font-family:"Times New Roman",serif;color:black'>&nbsp;by the expression&nbsp;</span><span
-lang=EN-GB style='font-size:10.0pt;font-family:"Courier New";color:black'>exp2</span><span
-lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
+  style='font-size:10.0pt;font-family:"Courier New";color:black'>exp2</span><span
+  style='font-size:13.5pt;font-family:"Times New Roman",serif;
 color:black'>.&nbsp;The option is often the letter&nbsp;</span><span
-lang=EN-GB style='font-size:10.0pt;font-family:"Courier New";color:black'>g</span><span
-lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
+  style='font-size:10.0pt;font-family:"Courier New";color:black'>g</span><span
+  style='font-size:13.5pt;font-family:"Times New Roman",serif;
 color:black'>&nbsp;to say that all occurrences on the same line should be
 replaced.&nbsp;</span><span style='font-size:13.5pt;font-family:"Times New Roman",serif;
 color:black'>For example:</span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
-     line-height:normal'><span lang=EN-GB style='font-size:10.0pt;font-family:
-     "Courier New"'>sed&nbsp;'s/[éèêë]/e/g' </span><span lang=EN-GB
+     line-height:normal'><span   style='font-size:10.0pt;font-family:
+     "Courier New"'>sed&nbsp;'s/[Ã©Ã¨ÃªÃ«]/e/g' </span><span  
      style='font-size:12.0pt;font-family:"Times New Roman",serif'>replaces all
      accented letters &quot;e&quot; with an unaccented letter</span></li>
  <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
-     line-height:normal'><span lang=EN-GB style='font-size:10.0pt;font-family:
+     line-height:normal'><span   style='font-size:10.0pt;font-family:
      "Courier New"'>sed&nbsp;'s/ \([^]*\)ation / \U\1ATION/g'</span><span
-     lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif'>&nbsp;transforms
+       style='font-size:12.0pt;font-family:"Times New Roman",serif'>&nbsp;transforms
      the words which end with the suffix &quot;ation&quot; into capital
      letters, for example, &quot;habitation&quot; becomes
      &quot;HABITATION&quot;</span></li>
@@ -992,29 +988,29 @@ color:black'>For example:</span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
-     line-height:normal'><b><span lang=EN-GB style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>Q1:</span></b><span lang=EN-GB
+     line-height:normal'><b><span   style='font-size:12.0pt;
+     font-family:"Times New Roman",serif'>Q1:</span></b><span  
      style='font-size:12.0pt;font-family:"Times New Roman",serif'>&nbsp;Add an
      end point to each line and put the first letter in capital letters.</span></li>
  <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
-     line-height:normal'><b><span lang=EN-GB style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>Q2:</span></b><span lang=EN-GB
+     line-height:normal'><b><span   style='font-size:12.0pt;
+     font-family:"Times New Roman",serif'>Q2:</span></b><span  
      style='font-size:12.0pt;font-family:"Times New Roman",serif'>&nbsp;Replace
      any occurrence of two consecutive identical words with a single occurrence
      of that word, for example, &quot;de de&quot; becomes &quot;de&quot;.</span></li>
 </ul>
 
-<p class=MsoNormal style='line-height:normal'><b><span lang=EN-GB
+<p class=MsoNormal style='line-height:normal'><b><span  
 style='font-size:13.5pt;font-family:"Times New Roman",serif;color:black'>Exercise
-7:</span></b><span lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
-color:black'>&nbsp;Union of files with&nbsp;</span><span lang=EN-GB
+7:</span></b><span   style='font-size:13.5pt;font-family:"Times New Roman",serif;
+color:black'>&nbsp;Union of files with&nbsp;</span><span  
 style='font-size:10.0pt;font-family:"Courier New";color:black'>join</span></p>
 
-<p class=MsoNormal style='line-height:normal'><span lang=EN-GB
+<p class=MsoNormal style='line-height:normal'><span  
 style='font-size:13.5pt;font-family:"Times New Roman",serif;color:black'>A&nbsp;</span><span
-lang=EN-US><a href="http://collocations.de/AM/index.html"><span lang=EN-GB
+lang=EN-US><a href="http://collocations.de/AM/index.html"><span  
 style='font-size:13.5pt;font-family:"Times New Roman",serif;color:purple'>measure
-of association</span></a></span><span lang=EN-GB style='font-size:13.5pt;
+of association</span></a></span><span   style='font-size:13.5pt;
 font-family:"Times New Roman",serif;color:black'>&nbsp;is a numerical value
 which estimates the&nbsp;degree&nbsp;of association between two
 words.&nbsp;This measure can be used to automatically detect &quot;collocations&quot;,&nbsp;ie&nbsp;sequences
@@ -1029,8 +1025,8 @@ w&nbsp;<sub>2</sub>:</span></p>
  <tr>
   <td style='padding:.75pt .75pt .75pt .75pt'>
   <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-  normal'><span lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif'>PMI
-  =&nbsp;c(w<sub>1</sub>&nbsp;w<sub>2</sub>) × log [ c(w<sub>1</sub>&nbsp;w<sub>2</sub>)
+  normal'><span   style='font-size:12.0pt;font-family:"Times New Roman",serif'>PMI
+  =&nbsp;c(w<sub>1</sub>&nbsp;w<sub>2</sub>) . log [ c(w<sub>1</sub>&nbsp;w<sub>2</sub>)
   / E(w<sub>1</sub>&nbsp;w<sub>2</sub>) ]</span></p>
   </td>
  </tr>
@@ -1038,7 +1034,7 @@ w&nbsp;<sub>2</sub>:</span></p>
 
 </div>
 
-<p class=MsoNormal style='line-height:normal'><span lang=EN-GB
+<p class=MsoNormal style='line-height:normal'><span  
 style='font-size:13.5pt;font-family:"Times New Roman",serif;color:black'>Where&nbsp;c
 (w<sub>1, </sub>w<sub>2</sub>) is the number of occurrences of
 the&nbsp;bigram&nbsp;w<sub>1</sub>&nbsp;w<sub>2</sub>, as calculated in
@@ -1065,7 +1061,7 @@ occurrences of this&nbsp;bigram&nbsp;defined as:</span></p>
   <td style='padding:0cm 0cm 0cm 0cm'>
   <p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
   text-align:center;line-height:normal'><span style='font-size:10.0pt;
-  font-family:"Courier New"'>————————</span></p>
+  font-family:"Courier New"'>-----------</span></p>
   </td>
  </tr>
  <tr>
@@ -1080,111 +1076,111 @@ occurrences of this&nbsp;bigram&nbsp;defined as:</span></p>
 
 </div>
 
-<p class=MsoNormal style='line-height:normal'><span lang=EN-GB
+<p class=MsoNormal style='line-height:normal'><span  
 style='font-size:13.5pt;font-family:"Times New Roman",serif;color:black'>Where
 c (w<sub>1</sub>) is the number of occurrences of the first word, c (w<sub>2</sub>)
 is the number of occurrences of the second word and&nbsp;<i>N</i>&nbsp;is the
 total number of words in this text.</span></p>
 
-<p class=MsoNormal style='line-height:normal'><span lang=EN-GB
+<p class=MsoNormal style='line-height:normal'><span  
 style='font-size:13.5pt;font-family:"Times New Roman",serif;color:black'>For
 each&nbsp;bigram&nbsp;in the text, calculate its&nbsp;<i>PMI</i>&nbsp;association
 value&nbsp;according to the given formula.&nbsp;Each line of the output file
-must have the form &quot;w<sub>1</sub>&nbsp;&nbsp;&nbsp;&nbsp;w<sub>2</sub>&nbsp;&nbsp;&nbsp;&nbsp;c(w<sub>1</sub>,w<sub>2</sub>)     c(w<sub>1</sub>)  c(w<sub>2</sub>)          PMI&quot;</span></p>
+must have the form &quot;w<sub>1</sub>&nbsp;&nbsp;&nbsp;&nbsp;w<sub>2</sub>&nbsp;&nbsp;&nbsp;&nbsp;c(w<sub>1</sub>,w<sub>2</sub>) . c(w<sub>1</sub>) &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;  c(w<sub>2</sub>) &nbsp; &nbsp;  &nbsp; PMI&quot;</span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
-     line-height:normal'><b><span lang=EN-GB style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>Q1:</span></b><span lang=EN-GB
+     line-height:normal'><b><span   style='font-size:12.0pt;
+     font-family:"Times New Roman",serif'>Q1:</span></b><span  
      style='font-size:12.0pt;font-family:"Times New Roman",serif'>&nbsp;What
      are the five&nbsp;most strongly associated&nbsp;bigrams&nbsp;according to
      this measure?</span></li>
  <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
-     line-height:normal'><b><span lang=EN-GB style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>Q2:</span></b><span lang=EN-GB
+     line-height:normal'><b><span   style='font-size:12.0pt;
+     font-family:"Times New Roman",serif'>Q2:</span></b><span  
      style='font-size:12.0pt;font-family:"Times New Roman",serif'>&nbsp;What
      are the five&nbsp;most strongly associated&nbsp;bigrams&nbsp;that appear
      less than 1000 times in the text?</span></li>
 </ul>
 
-<p class=MsoNormal style='line-height:normal'><b><span lang=EN-GB
+<p class=MsoNormal style='line-height:normal'><b><span  
 style='font-size:13.5pt;font-family:"Times New Roman",serif;color:black'>Help:</span></b><span
-lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
-color:black'>&nbsp;Use the&nbsp;</span><span lang=EN-GB style='font-size:10.0pt;
-font-family:"Courier New";color:black'>join</span><span lang=EN-GB
+  style='font-size:13.5pt;font-family:"Times New Roman",serif;
+color:black'>&nbsp;Use the&nbsp;</span><span   style='font-size:10.0pt;
+font-family:"Courier New";color:black'>join</span><span  
 style='font-size:13.5pt;font-family:"Times New Roman",serif;color:black'>&nbsp;command&nbsp;to
 combine the information from the files in Exercises 2 and 3, but be careful to
 sort the files by the &quot;junction&quot; field (s).&nbsp;To avoid warnings,
-before any&nbsp;</span><span lang=EN-GB style='font-size:10.0pt;font-family:
-"Courier New";color:black'>sort</span><span lang=EN-GB style='font-size:13.5pt;
+before any&nbsp;</span><span   style='font-size:10.0pt;font-family:
+"Courier New";color:black'>sort</span><span   style='font-size:13.5pt;
 font-family:"Times New Roman",serif;color:black'>&nbsp;and&nbsp;</span><span
-lang=EN-GB style='font-size:10.0pt;font-family:"Courier New";color:black'>join</span><span
-lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
+  style='font-size:10.0pt;font-family:"Courier New";color:black'>join</span><span
+  style='font-size:13.5pt;font-family:"Times New Roman",serif;
 color:black'>&nbsp;command,&nbsp;you must modify the&nbsp;</span><span
-lang=EN-GB style='font-size:10.0pt;font-family:"Courier New";color:black'>LC_ALL=C</span><span
-lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
-color:black'>&nbsp;variable, for example:&nbsp;</span><span lang=EN-GB
+  style='font-size:10.0pt;font-family:"Courier New";color:black'>LC_ALL=C</span><span
+  style='font-size:13.5pt;font-family:"Times New Roman",serif;
+color:black'>&nbsp;variable, for example:&nbsp;</span><span  
 style='font-size:10.0pt;font-family:"Courier New";color:black'>LC_ALL=C sort&nbsp;RADIOS.hist</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-normal'><b><span lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
-color:black'>Exercise 8:&nbsp;</span></b><span lang=EN-GB style='font-size:
+normal'><b><span   style='font-size:13.5pt;font-family:"Times New Roman",serif;
+color:black'>Exercise 8:&nbsp;</span></b><span   style='font-size:
 13.5pt;font-family:"Times New Roman",serif;color:black'>observing the encodings</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-normal'><span lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
-color:black'>Open the files&nbsp;</span><span lang=EN-GB style='font-size:10.0pt;
-font-family:"Courier New";color:black'>testFR.txt.UTF-8</span><span lang=EN-GB
+normal'><span   style='font-size:13.5pt;font-family:"Times New Roman",serif;
+color:black'>Open the files&nbsp;</span><span   style='font-size:10.0pt;
+font-family:"Courier New";color:black'>testFR.txt.UTF-8</span><span  
 style='font-size:13.5pt;font-family:"Times New Roman",serif;color:black'>,&nbsp;</span><span
-lang=EN-GB style='font-size:10.0pt;font-family:"Courier New";color:black'>testRU.txt</span><span
-lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
-color:black'>,&nbsp;</span><span lang=EN-GB style='font-size:10.0pt;font-family:
-"Courier New";color:black'>testGK.txt</span><span lang=EN-GB style='font-size:
+  style='font-size:10.0pt;font-family:"Courier New";color:black'>testRU.txt</span><span
+  style='font-size:13.5pt;font-family:"Times New Roman",serif;
+color:black'>,&nbsp;</span><span   style='font-size:10.0pt;font-family:
+"Courier New";color:black'>testGK.txt</span><span   style='font-size:
 13.5pt;font-family:"Times New Roman",serif;color:black'>&nbsp;and&nbsp;</span><span
-lang=EN-GB style='font-size:10.0pt;font-family:"Courier New";color:black'>testAR.txt</span><span
-lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
+  style='font-size:10.0pt;font-family:"Courier New";color:black'>testAR.txt</span><span
+  style='font-size:13.5pt;font-family:"Times New Roman",serif;
 color:black'>&nbsp;with a web browser and modify the character encoding for
 display (UTF-8, UTF-16, Western ISO-8859 -1,&nbsp;Arabic&nbsp;Windows-1256,
 etc.):<br>
 The files can be found&nbsp;</span><span lang=EN-US><a
-href="https://cservan.github.io/data/"><span lang=EN-GB style='font-size:13.5pt;
+href="https://cservan.github.io/data/"><span   style='font-size:13.5pt;
 font-family:"Times New Roman",serif;color:purple'>here</span></a></span><span
-lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
+  style='font-size:13.5pt;font-family:"Times New Roman",serif;
 color:black'>.</span></p>
 
 <p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
 margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;line-height:normal'><span
-lang=EN-GB style='font-size:13.5pt;font-family:Symbol;color:black'>·</span><span
-lang=EN-GB style='font-size:7.0pt;font-family:"Times New Roman",serif;
+  style='font-size:13.5pt;font-family:Symbol;color:black'>-</span><span
+  style='font-size:7.0pt;font-family:"Times New Roman",serif;
 color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
-lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
-color:black'>Mozilla&nbsp;Firefox:&nbsp;Menu&nbsp;</span><span lang=EN-GB
+  style='font-size:13.5pt;font-family:"Times New Roman",serif;
+color:black'>Mozilla&nbsp;Firefox:&nbsp;Menu&nbsp;</span><span  
 style='font-size:10.0pt;font-family:"Courier New";color:black'>View &gt;
 Character Encoding &gt; More Encodings</span></p>
 
 <p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
 margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;line-height:normal'><span
-lang=EN-GB style='font-size:10.0pt;font-family:Symbol;color:black'>·</span><span
-lang=EN-GB style='font-size:7.0pt;font-family:"Times New Roman",serif;
+  style='font-size:10.0pt;font-family:Symbol;color:black'>-</span><span
+  style='font-size:7.0pt;font-family:"Times New Roman",serif;
 color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
-lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
-color:black'>Chrome et&nbsp;Chromium:&nbsp;Bouton&nbsp;</span><span lang=EN-GB
+  style='font-size:13.5pt;font-family:"Times New Roman",serif;
+color:black'>Chrome et&nbsp;Chromium:&nbsp;Bouton&nbsp;</span><span  
 style='font-size:10.0pt;font-family:"Courier New";color:black'>Customize &gt;
 Tools &gt; Encoding</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-normal'><span lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
+normal'><span   style='font-size:13.5pt;font-family:"Times New Roman",serif;
 color:black'>Questions:</span></p>
 
 <ul style='margin-top:0cm' type=disc>
  <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
-     line-height:normal'><b><span lang=EN-GB style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>Q1:</span></b><span lang=EN-GB
+     line-height:normal'><b><span   style='font-size:12.0pt;
+     font-family:"Times New Roman",serif'>Q1:</span></b><span  
      style='font-size:12.0pt;font-family:"Times New Roman",serif'>&nbsp;Why do
      some files appear as strange symbols instead of text?</span></li>
  <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
-     line-height:normal'><b><span lang=EN-GB style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>Q2:</span></b><span lang=EN-GB
+     line-height:normal'><b><span   style='font-size:12.0pt;
+     font-family:"Times New Roman",serif'>Q2:</span></b><span  
      style='font-size:12.0pt;font-family:"Times New Roman",serif'>&nbsp;How do
      you think the browser can detect the character encoding of the file?&nbsp;</span><span
      style='font-size:10.0pt;font-family:"Courier New"'>Is</span><span
@@ -1194,223 +1190,223 @@ color:black'>Questions:</span></p>
      (testing with&nbsp;</span><span style='font-size:10.0pt;font-family:"Courier New"'>testAR.win</span><span
      style='font-size:12.0pt;font-family:"Times New Roman",serif'>)?</span></li>
  <li class=MsoNormal style='color:black;margin-bottom:0cm;margin-bottom:.0001pt;
-     line-height:normal'><b><span lang=EN-GB style='font-size:12.0pt;
-     font-family:"Times New Roman",serif'>Q3:</span></b><span lang=EN-GB
+     line-height:normal'><b><span   style='font-size:12.0pt;
+     font-family:"Times New Roman",serif'>Q3:</span></b><span  
      style='font-size:12.0pt;font-family:"Times New Roman",serif'>&nbsp;Why do
      some texts display correctly even when we choose a character encoding
      different from that in which the text is saved (for example, try to
-     display&nbsp;</span><span lang=EN-GB style='font-size:10.0pt;font-family:
-     "Courier New"'>testFR.txt</span><span lang=EN-GB style='font-size:12.0pt;
+     display&nbsp;</span><span   style='font-size:10.0pt;font-family:
+     "Courier New"'>testFR.txt</span><span   style='font-size:12.0pt;
      font-family:"Times New Roman",serif'>&nbsp;with the encoding
      &quot;&nbsp;Turkish&nbsp;Windows-1254&quot;)?</span></li>
 </ul>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-normal'><span lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
-color:black'>Open the&nbsp;</span><span lang=EN-GB style='font-size:10.0pt;
-font-family:"Courier New";color:black'>testFR.txt</span><span lang=EN-GB
+normal'><span   style='font-size:13.5pt;font-family:"Times New Roman",serif;
+color:black'>Open the&nbsp;</span><span   style='font-size:10.0pt;
+font-family:"Courier New";color:black'>testFR.txt</span><span  
 style='font-size:13.5pt;font-family:"Times New Roman",serif;color:black'>,&nbsp;</span><span
-lang=EN-GB style='font-size:10.0pt;font-family:"Courier New";color:black'>testRU.txt</span><span
-lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
-color:black'>,&nbsp;</span><span lang=EN-GB style='font-size:10.0pt;font-family:
-"Courier New";color:black'>testGK.txt</span><span lang=EN-GB style='font-size:
+  style='font-size:10.0pt;font-family:"Courier New";color:black'>testRU.txt</span><span
+  style='font-size:13.5pt;font-family:"Times New Roman",serif;
+color:black'>,&nbsp;</span><span   style='font-size:10.0pt;font-family:
+"Courier New";color:black'>testGK.txt</span><span   style='font-size:
 13.5pt;font-family:"Times New Roman",serif;color:black'>&nbsp;and&nbsp;</span><span
-lang=EN-GB style='font-size:10.0pt;font-family:"Courier New";color:black'>testAR.txt
-files</span><span lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
+  style='font-size:10.0pt;font-family:"Courier New";color:black'>testAR.txt
+files</span><span   style='font-size:13.5pt;font-family:"Times New Roman",serif;
 color:black'>&nbsp;with office software such as MS-Word or Libre Office.&nbsp;Same
 questions.</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-normal'><b><span lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
-color:black'>Exercise 9:&nbsp;</span></b><span lang=EN-GB style='font-size:
+normal'><b><span   style='font-size:13.5pt;font-family:"Times New Roman",serif;
+color:black'>Exercise 9:&nbsp;</span></b><span   style='font-size:
 13.5pt;font-family:"Times New Roman",serif;color:black'>analysis of encodings</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-normal'><span lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
+normal'><span   style='font-size:13.5pt;font-family:"Times New Roman",serif;
 color:black'>Compare the different Unicode layers for the&nbsp;</span><span
-lang=EN-GB style='font-size:10.0pt;font-family:"Courier New";color:black'>testFR.txt.UTF-8</span><span
-lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
+  style='font-size:10.0pt;font-family:"Courier New";color:black'>testFR.txt.UTF-8</span><span
+  style='font-size:13.5pt;font-family:"Times New Roman",serif;
 color:black'>&nbsp;file, in particular:</span></p>
 
 <p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
 margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;line-height:normal'><span
-style='font-size:13.5pt;font-family:Symbol;color:black'>·</span><span
-lang=EN-GB style='font-size:7.0pt;font-family:"Times New Roman",serif;
+style='font-size:13.5pt;font-family:Symbol;color:black'>-</span><span
+  style='font-size:7.0pt;font-family:"Times New Roman",serif;
 color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
-lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
+  style='font-size:13.5pt;font-family:"Times New Roman",serif;
 color:black'>Character or glyph displayed</span></p>
 
 <p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
 margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;line-height:normal'><span
-style='font-size:13.5pt;font-family:Symbol;color:black'>·</span><span
-lang=EN-GB style='font-size:7.0pt;font-family:"Times New Roman",serif;
+style='font-size:13.5pt;font-family:Symbol;color:black'>-</span><span
+  style='font-size:7.0pt;font-family:"Times New Roman",serif;
 color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
-lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
+  style='font-size:13.5pt;font-family:"Times New Roman",serif;
 color:black'>Point code (find the relationship with the character in&nbsp;</span><span
-lang=EN-US><a href="http://www.unicode.org/charts/"><span lang=EN-GB
+lang=EN-US><a href="http://www.unicode.org/charts/"><span  
 style='font-size:13.5pt;font-family:"Times New Roman",serif;color:purple'>Unicode
-tables</span></a></span><span lang=EN-GB style='font-size:13.5pt;font-family:
+tables</span></a></span><span   style='font-size:13.5pt;font-family:
 "Times New Roman",serif;color:black'>)</span></p>
 
 <p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
 margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;line-height:normal'><span
-style='font-size:13.5pt;font-family:Symbol;color:black'>·</span><span
-lang=EN-GB style='font-size:7.0pt;font-family:"Times New Roman",serif;
+style='font-size:13.5pt;font-family:Symbol;color:black'>-</span><span
+  style='font-size:7.0pt;font-family:"Times New Roman",serif;
 color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
-lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
+  style='font-size:13.5pt;font-family:"Times New Roman",serif;
 color:black'>Representation on disk according to the encoding format (</span><span
-lang=EN-GB style='font-size:10.0pt;font-family:"Courier New";color:black'>man
-UTF-8</span><span lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
-color:black'>, use&nbsp;</span><span lang=EN-GB style='font-size:10.0pt;
-font-family:"Courier New";color:black'>hexedit</span><span lang=EN-GB
+  style='font-size:10.0pt;font-family:"Courier New";color:black'>man
+UTF-8</span><span   style='font-size:13.5pt;font-family:"Times New Roman",serif;
+color:black'>, use&nbsp;</span><span   style='font-size:10.0pt;
+font-family:"Courier New";color:black'>hexedit</span><span  
 style='font-size:13.5pt;font-family:"Times New Roman",serif;color:black'>&nbsp;to
 see the representation in hexadecimal)</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-normal'><span lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
+normal'><span   style='font-size:13.5pt;font-family:"Times New Roman",serif;
 color:black'>Questions:</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-normal'><span lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
+normal'><span   style='font-size:13.5pt;font-family:"Times New Roman",serif;
 color:black'>&nbsp;</span></p>
 
 <p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
 margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;line-height:normal'><span
-style='font-size:13.5pt;font-family:Symbol;color:black'>·&nbsp;</span><span
-lang=EN-GB style='font-size:7.0pt;font-family:"Times New Roman",serif;
+style='font-size:13.5pt;font-family:Symbol;color:black'>-&nbsp;</span><span
+  style='font-size:7.0pt;font-family:"Times New Roman",serif;
 color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b><span
-lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
-color:black'>Q1:</span></b><span lang=EN-GB style='font-size:13.5pt;font-family:
+  style='font-size:13.5pt;font-family:"Times New Roman",serif;
+color:black'>Q1:</span></b><span   style='font-size:13.5pt;font-family:
 "Times New Roman",serif;color:black'>&nbsp;How many bytes are needed to represent
 the word &quot;&nbsp;below&nbsp;&quot; in UTF-&nbsp;8?&nbsp;What is the
 representation of this word in hexadecimal?</span></p>
 
 <p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
 margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;line-height:normal'><span
-style='font-size:13.5pt;font-family:Symbol;color:black'>·&nbsp;</span><span
-lang=EN-GB style='font-size:7.0pt;font-family:"Times New Roman",serif;
+style='font-size:13.5pt;font-family:Symbol;color:black'>-&nbsp;</span><span
+  style='font-size:7.0pt;font-family:"Times New Roman",serif;
 color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b><span
-lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
-color:black'>Q2:</span></b><span lang=EN-GB style='font-size:13.5pt;font-family:
+  style='font-size:13.5pt;font-family:"Times New Roman",serif;
+color:black'>Q2:</span></b><span   style='font-size:13.5pt;font-family:
 "Times New Roman",serif;color:black'>&nbsp;In UTF-8, what are the glyphs
 represented by the hexadecimal sequence &quot;47 72 C3 BC C3 9F
 65&quot;?&nbsp;How many bytes are required to represent each glyph?</span></p>
 
 <p class=MsoNormal style='margin-left:36.0pt;line-height:normal'><span
-lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
+  style='font-size:13.5pt;font-family:"Times New Roman",serif;
 color:black'>Help: To find out the glyph from the point code, type&nbsp;</span><span
-lang=EN-GB style='font-size:10.0pt;font-family:"Courier New";color:black'>/&nbsp;usr&nbsp;/
+  style='font-size:10.0pt;font-family:"Courier New";color:black'>/&nbsp;usr&nbsp;/
 bin /&nbsp;printf&nbsp;&quot;\&nbsp;uXXXX&nbsp;\ n&quot;</span><span
-lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
+  style='font-size:13.5pt;font-family:"Times New Roman",serif;
 color:black'>&nbsp;replacing XXXX with the point code of the glyph</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-normal'><b><span lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
-color:black'>Exercise 10:&nbsp;</span></b><span lang=EN-GB style='font-size:
+normal'><b><span   style='font-size:13.5pt;font-family:"Times New Roman",serif;
+color:black'>Exercise 10:&nbsp;</span></b><span   style='font-size:
 13.5pt;font-family:"Times New Roman",serif;color:black'>encoding and place
 occupied</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-normal'><span lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
-color:black'>Compare the files&nbsp;</span><span lang=EN-GB style='font-size:
+normal'><span   style='font-size:13.5pt;font-family:"Times New Roman",serif;
+color:black'>Compare the files&nbsp;</span><span   style='font-size:
 10.0pt;font-family:"Courier New";color:black'>testFR.txt.UTF-8</span><span
-lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
-color:black'>&nbsp;and&nbsp;</span><span lang=EN-GB style='font-size:10.0pt;
+  style='font-size:13.5pt;font-family:"Times New Roman",serif;
+color:black'>&nbsp;and&nbsp;</span><span   style='font-size:10.0pt;
 font-family:"Courier New";color:black'>testFR.txt.iso8859-1</span></p>
 
 <p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
 margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;line-height:normal'><span
-style='font-size:13.5pt;font-family:Symbol;color:black'>·&nbsp;</span><span
-lang=EN-GB style='font-size:7.0pt;font-family:"Times New Roman",serif;
+style='font-size:13.5pt;font-family:Symbol;color:black'>-&nbsp;</span><span
+  style='font-size:7.0pt;font-family:"Times New Roman",serif;
 color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b><span
-lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
-color:black'>Q1:</span></b><span lang=EN-GB style='font-size:13.5pt;font-family:
+  style='font-size:13.5pt;font-family:"Times New Roman",serif;
+color:black'>Q1:</span></b><span   style='font-size:13.5pt;font-family:
 "Times New Roman",serif;color:black'>&nbsp;What is the most efficient
 representation in terms of bytes used?</span></p>
 
 <p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
 margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;line-height:normal'><span
-style='font-size:13.5pt;font-family:Symbol;color:black'>·&nbsp;</span><span
-lang=EN-GB style='font-size:7.0pt;font-family:"Times New Roman",serif;
+style='font-size:13.5pt;font-family:Symbol;color:black'>-&nbsp;</span><span
+  style='font-size:7.0pt;font-family:"Times New Roman",serif;
 color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b><span
-lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
-color:black'>Q2:</span></b><span lang=EN-GB style='font-size:13.5pt;font-family:
+  style='font-size:13.5pt;font-family:"Times New Roman",serif;
+color:black'>Q2:</span></b><span   style='font-size:13.5pt;font-family:
 "Times New Roman",serif;color:black'>&nbsp;What is the sequence of bytes used
 in each encoding to represent the first character?</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-normal'><b><span lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
-color:black'>Exercise 11:&nbsp;</span></b><span lang=EN-GB style='font-size:
+normal'><b><span   style='font-size:13.5pt;font-family:"Times New Roman",serif;
+color:black'>Exercise 11:&nbsp;</span></b><span   style='font-size:
 13.5pt;font-family:"Times New Roman",serif;color:black'>conversion to UTF-8</span></p>
 
 <p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
 margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;line-height:normal'><span
-style='font-size:13.5pt;font-family:Symbol;color:black'>·&nbsp;</span><span
-lang=EN-GB style='font-size:7.0pt;font-family:"Times New Roman",serif;
+style='font-size:13.5pt;font-family:Symbol;color:black'>-&nbsp;</span><span
+  style='font-size:7.0pt;font-family:"Times New Roman",serif;
 color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b><span
-lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
-color:black'>Q1:</span></b><span lang=EN-GB style='font-size:13.5pt;font-family:
+  style='font-size:13.5pt;font-family:"Times New Roman",serif;
+color:black'>Q1:</span></b><span   style='font-size:13.5pt;font-family:
 "Times New Roman",serif;color:black'>&nbsp;Convert
 the&nbsp;testAR.win&nbsp;file&nbsp;to UTF-8 with the Linux&nbsp;</span><span
-lang=EN-GB style='font-size:10.0pt;font-family:"Courier New";color:black'>iconv</span><span
-lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
+  style='font-size:10.0pt;font-family:"Courier New";color:black'>iconv</span><span
+  style='font-size:13.5pt;font-family:"Times New Roman",serif;
 color:black'>&nbsp;command.&nbsp;What can we say about the display in&nbsp;</span><span
-lang=EN-GB style='font-size:10.0pt;font-family:"Courier New";color:black'>vim</span><span
-lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
+  style='font-size:10.0pt;font-family:"Courier New";color:black'>vim</span><span
+  style='font-size:13.5pt;font-family:"Times New Roman",serif;
 color:black'>, once the file has been converted?</span></p>
 
-<p class=MsoNormal style='line-height:normal'><span lang=EN-GB
+<p class=MsoNormal style='line-height:normal'><span  
 style='font-size:13.5pt;font-family:"Times New Roman",serif;color:black'>Help:
 for Arabic, the character encoding of the file is in&nbsp;windows&nbsp;format,
-called&nbsp;</span><span lang=EN-GB style='font-size:10.0pt;font-family:"Courier New";
-color:black'>cp1256</span><span lang=EN-GB style='font-size:13.5pt;font-family:
+called&nbsp;</span><span   style='font-size:10.0pt;font-family:"Courier New";
+color:black'>cp1256</span><span   style='font-size:13.5pt;font-family:
 "Times New Roman",serif;color:black'>.</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-normal'><b><span lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
-color:black'>Exercise 12:&nbsp;</span></b><span lang=EN-GB style='font-size:
+normal'><b><span   style='font-size:13.5pt;font-family:"Times New Roman",serif;
+color:black'>Exercise 12:&nbsp;</span></b><span   style='font-size:
 13.5pt;font-family:"Times New Roman",serif;color:black'>conversion from UTF-8</span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
-normal'><span lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
-color:black'>Convert the file&nbsp;</span><span lang=EN-GB style='font-size:
+normal'><span   style='font-size:13.5pt;font-family:"Times New Roman",serif;
+color:black'>Convert the file&nbsp;</span><span   style='font-size:
 10.0pt;font-family:"Courier New";color:black'>testFR.txt.UTF-8</span><span
-lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
-color:black'>&nbsp;to UTF-16 with&nbsp;</span><span lang=EN-GB
+  style='font-size:13.5pt;font-family:"Times New Roman",serif;
+color:black'>&nbsp;to UTF-16 with&nbsp;</span><span  
 style='font-size:10.0pt;font-family:"Courier New";color:black'>iconv</span><span
-lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
-color:black'>.&nbsp;Visualize the change with&nbsp;</span><span lang=EN-GB
+  style='font-size:13.5pt;font-family:"Times New Roman",serif;
+color:black'>.&nbsp;Visualize the change with&nbsp;</span><span  
 style='font-size:10.0pt;font-family:"Courier New";color:black'>hexedit</span><span
-lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
+  style='font-size:13.5pt;font-family:"Times New Roman",serif;
 color:black'>.</span></p>
 
 <p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
 margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;line-height:normal'><span
-style='font-size:13.5pt;font-family:Symbol;color:black'>·&nbsp;</span><span
-lang=EN-GB style='font-size:7.0pt;font-family:"Times New Roman",serif;
+style='font-size:13.5pt;font-family:Symbol;color:black'>-&nbsp;</span><span
+  style='font-size:7.0pt;font-family:"Times New Roman",serif;
 color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b><span
-lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
-color:black'>Q1:</span></b><span lang=EN-GB style='font-size:13.5pt;font-family:
+  style='font-size:13.5pt;font-family:"Times New Roman",serif;
+color:black'>Q1:</span></b><span   style='font-size:13.5pt;font-family:
 "Times New Roman",serif;color:black'>&nbsp;What are the first two bytes in the
 file converted to UTF-16?</span></p>
 
 <p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
 margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;line-height:normal'><span
-style='font-size:13.5pt;font-family:Symbol;color:black'>·&nbsp;</span><span
-lang=EN-GB style='font-size:7.0pt;font-family:"Times New Roman",serif;
+style='font-size:13.5pt;font-family:Symbol;color:black'>-&nbsp;</span><span
+  style='font-size:7.0pt;font-family:"Times New Roman",serif;
 color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b><span
-lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
-color:black'>Q2:</span></b><span lang=EN-GB style='font-size:13.5pt;font-family:
+  style='font-size:13.5pt;font-family:"Times New Roman",serif;
+color:black'>Q2:</span></b><span   style='font-size:13.5pt;font-family:
 "Times New Roman",serif;color:black'>&nbsp;What is the correspondence between
 Unicode point codes and their representation in UTF-16?</span></p>
 
 <p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
 margin-left:36.0pt;margin-bottom:.0001pt;text-indent:-18.0pt;line-height:normal'><span
-style='font-size:13.5pt;font-family:Symbol;color:black'>·&nbsp;</span><span
-lang=EN-GB style='font-size:7.0pt;font-family:"Times New Roman",serif;
+style='font-size:13.5pt;font-family:Symbol;color:black'>-&nbsp;</span><span
+  style='font-size:7.0pt;font-family:"Times New Roman",serif;
 color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><b><span
-lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
-color:black'>Q3:</span></b><span lang=EN-GB style='font-size:13.5pt;font-family:
+  style='font-size:13.5pt;font-family:"Times New Roman",serif;
+color:black'>Q3:</span></b><span   style='font-size:13.5pt;font-family:
 "Times New Roman",serif;color:black'>&nbsp;Now try to convert to
 UTF-16BE.&nbsp;What is the difference between this encoding and UTF-16?</span></p>
 
