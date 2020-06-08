@@ -68,24 +68,24 @@ This is a very common way to proceed, since Statistical Machine Translation appr
 		<p><b>WARNING:</b> Read carefully the documentation. if the file is not at the right format it won't work.</p>
 		<p>Bitexts are sentence align text generally separated in two files. In our case, the amount of words per line have to be the same. Here is an example: </p>
 		<pre>
-==> train.src <==
+==> train.src (source) <==
 Confidence in the pound is widely expected to take another sharp dive if trade figures for September , due for release tomorrow , fail to show a substantial improvement from July and August 's near-record deficits . 
 Chancellor of the Exchequer Nigel Lawson 's restated commitment to a firm monetary policy has helped to prevent a freefall in sterling over the past week . 
 But analysts reckon underlying support for sterling has been eroded by the chancellor 's failure to announce any new policy measures in his Mansion House speech last Thursday . 
 		
-==> train.tgt <==
+==> train.tgt (target)<==
 NN IN DT NN VBZ RB VBN TO VB DT JJ NN IN NN NNS IN NNP PUNCT JJ IN NN NN PUNCT VB TO VB DT JJ NN IN NNP CC NNP POS JJ NNS PUNCT 
 NNP IN DT NNP NNP NNP POS VBN NN TO DT NN JJ NN VBZ VBN TO VB DT NN IN NN IN DT JJ NN PUNCT 
 CC NNS VBP VBG NN IN NN VBZ VBN VBN IN DT NN POS NN TO VB DT JJ NN NNS IN PRP$ NNP NNP NN JJ NNP PUNCT 
 		</pre>
 		<ol>
-			<p><strong>Exercice 1:</strong> You have to create bitext for train, valid and test set composed of words and labels.
+			<p><strong>Exercice 1:</strong> You have to create bitext for train, valid and test set composed of words (source) and labels (target).
 			</p><ol>
 				<p><strong>Q1:</strong> Give the bash command to transform original data into bitexts, the valid set should be an extract of 1000 lines from the train set. (1pt)</p>
 				<p><strong>Q2:</strong> Then, extract three vocabularies from train set using <tt>onmt-build-vocab</tt> use the <tt>char_tokenization.yml</tt> file for the character tokenization(2pt) :<ul>
-                                            <li> words from the input </li>
-                                            <li> caracter from the input</li>
-                                            <li> tags from the output</li>
+                                            <li> words from the source part of the train set </li>
+                                            <li> caracter from the source part of the train set</li>
+                                            <li> tags from the target part of the train set</li>
                                             </ul>
                                             </p>
 				<p><strong>Q3:</strong> Give details about the amount of train and test data available for your experiments. (1pt)</p>
