@@ -1,0 +1,431 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+
+</style>
+<title>Demo: Language detection using Statistical Language Models</title>
+</head>
+
+<body lang=FR link=blue vlink="#954F72">
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='margin-top:5.0pt;margin-right:0cm;
+margin-bottom:5.0pt;margin-left:0cm;text-align:center;line-height:normal'><b><span
+lang=EN-GB style='font-size:24.0pt;font-family:"Times New Roman",serif;
+color:black'>Demo: Language detection using Statistical Language Models</span></b></p>
+
+<p class=MsoNormal align=center style='margin-top:5.0pt;margin-right:0cm;
+margin-bottom:5.0pt;margin-left:0cm;text-align:center;line-height:normal'><b><span
+lang=EN-GB style='font-size:13.5pt;font-family:"Times New Roman",serif;
+color:black'>Christophe Servan based on Laurent Besacier's demo</span></b></p>
+
+<div class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;line-height:normal'><span style='font-size:13.5pt;font-family:
+"Times New Roman",serif;color:black'>
+
+<hr>
+
+</span></div>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:0cm;line-height:normal'><b><span style='font-size:18.0pt;
+font-family:"Times New Roman",serif;color:black'>Tools</span></b></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:25.8pt;text-indent:0cm;line-height:normal'><span lang=EN-GB
+style='font-size:10.0pt;font-family:Symbol;color:black'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif;
+color:black'>The SRI-LM tool: allows the creation and use of n-gram language
+models to represent and process texts</span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:64.05pt;text-indent:0cm;line-height:normal'><span style='font-size:
+10.0pt;font-family:"Courier New";color:black'>o<span style='font:7.0pt "Times New Roman"'>
+</span></span><span style='font-size:12.0pt;font-family:"Times New Roman",serif;
+color:black'>Use&nbsp;the script available&nbsp;</span><span style='font-size:
+10.0pt;font-family:"Times New Roman",serif;color:black'><a
+href="https://cservan.github.io/tools/SRILM_installation.bash"><span
+style='font-size:12.0pt'>here</span></a></span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:64.05pt;text-indent:0cm;line-height:normal'><span lang=EN-GB
+style='font-size:10.0pt;font-family:"Courier New";color:black'>o<span
+style='font:7.0pt "Times New Roman"'> </span></span><span lang=EN-GB
+style='font-size:12.0pt;font-family:"Times New Roman",serif;color:black'>For
+MacOS, edit the file and change use this command line&nbsp;</span><span
+lang=EN-GB style='font-size:10.0pt;font-family:"Courier New";color:black'>make
+World MACHINE_TYPE=i686-m64&nbsp;</span><span lang=EN-GB style='font-size:
+12.0pt;font-family:"Times New Roman",serif;color:black'>by&nbsp;</span><span
+lang=EN-GB style='font-size:10.0pt;font-family:"Courier New";color:black'>make
+World MACHINE_TYPE=macosx-m64&nbsp;</span><span lang=EN-GB style='font-size:
+12.0pt;font-family:"Times New Roman",serif;color:black'>.</span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:25.8pt;text-indent:0cm;line-height:normal'><span lang=EN-GB
+style='font-size:10.0pt;font-family:Symbol;color:black'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif;
+color:black'>The&nbsp;fastText use tool: allows the creation and use of word
+representations and to learn classification models</span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:64.05pt;text-indent:0cm;line-height:normal'><span style='font-size:
+10.0pt;font-family:"Courier New";color:black'>o<span style='font:7.0pt "Times New Roman"'>
+</span></span><span style='font-size:12.0pt;font-family:"Times New Roman",serif;
+color:black'>Use the script available&nbsp;</span><span style='font-size:10.0pt;
+font-family:"Times New Roman",serif;color:black'><a
+href="https://cservan.github.io/tools/fastText_installation.bash"><span
+style='font-size:12.0pt'>here</span></a></span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:25.8pt;text-indent:0cm;line-height:normal'><span lang=EN-GB
+style='font-size:10.0pt;font-family:Symbol;color:black'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif;
+color:black'>Two texts of&nbsp;equivalent&nbsp;size&nbsp;in two different
+languages</span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:64.05pt;text-indent:0cm;line-height:normal'><span style='font-size:
+10.0pt;font-family:"Courier New";color:black'>o<span style='font:7.0pt "Times New Roman"'>
+</span></span><span style='font-size:12.0pt;font-family:"Times New Roman",serif;
+color:black'>Use the&nbsp;</span><span style='font-size:10.0pt;font-family:
+"Times New Roman",serif;color:black'><a
+href="https://cservan.github.io/data/tp2_files.tgz"><span
+style='font-size:12.0pt'>files provided</span></a></span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:64.05pt;text-indent:0cm;line-height:normal'><span style='font-size:
+10.0pt;font-family:"Courier New";color:black'>o<span style='font:7.0pt "Times New Roman"'>
+</span></span><span style='font-size:12.0pt;font-family:"Times New Roman",serif;
+color:black'>Tokenize files if needed.</span></p>
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:25.8pt;text-indent:0cm;line-height:normal'><span lang=EN-GB
+style='font-size:10.0pt;font-family:Symbol;color:black'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif;
+color:black'>Use the linux command line</span></p>
+<br>
+<hr>
+
+	<h2>Report
+	</h2>
+	<p>You should send me your report <u><b>the day before the next session</b></u> using <b>PDF</b> format
+	at the address christophe_dot_servan_at_epita_dot_fr (replace
+	_dot_ and _at_ by dots and at, respectively) </p><p>
+	<em>Remarks:</em>
+	</p><ul>
+                <li>If you encounter some issues, feel free to send me an email, I'll answer you ASAP;
+                </li><li><b>NO jupyternotes</b> nor scripts: they will be ignored. I want you to write a report. This also means you have to put your name on it and to do an effort of presentation! ;-)
+                </li><li>The report mark is important for the final course mark ;
+                </li><li>You have to report working in groups, if you did so (ask me before) ;
+                </li><li>If you send me your report lately, you will be penalised ;
+                </li><li>Plagianism equal to zero ;
+                </li><li>No report equal to zero ;
+	</li></ul>
+	<p></p>
+
+<hr>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:0cm;line-height:normal'><b><span lang=EN-GB style='font-size:18.0pt;
+font-family:"Times New Roman",serif;color:black'>Work to do</span></b></p>
+
+<h3>Part 1:</h3>
+<i>The classical Machine Learning Part</i>
+<ul>
+<h4>Exercise 1:</h4>
+<ul>
+<span
+lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif;
+color:black'>Cut each file of each language into two parts&nbsp;containing an
+equal number of lines (for example, we cut the file&nbsp;</span><span
+lang=EN-GB style='font-size:10.0pt;font-family:"Courier New";color:black'>fr.txt&nbsp;</span><span
+lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif;
+color:black'>into a file&nbsp;</span><span lang=EN-GB style='font-size:10.0pt;
+font-family:"Courier New";color:black'>train.fr&nbsp;</span><span lang=EN-GB
+style='font-size:12.0pt;font-family:"Times New Roman",serif;color:black'>and a
+file&nbsp;</span><span lang=EN-GB style='font-size:10.0pt;font-family:"Courier New";
+color:black'>test.fr&nbsp;</span><span lang=EN-GB style='font-size:12.0pt;
+font-family:"Times New Roman",serif;color:black'>)</span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:25.8pt;text-indent:0cm;line-height:normal'><span lang=EN-GB
+style='font-size:10.0pt;font-family:Symbol;color:black'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><b><span
+lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif;
+color:black'>Q1:&nbsp;</span></b><span lang=EN-GB style='font-size:12.0pt;
+font-family:"Times New Roman",serif;color:black'>Why should we use different
+texts for learning and testing?</span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:0cm;line-height:normal'><i><span lang=EN-GB style='font-size:12.0pt;
+font-family:"Times New Roman",serif;color:black'>Recall</span></i><span
+lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif;
+color:black'>: The linux&nbsp;</span><span lang=EN-GB style='font-size:10.0pt;
+font-family:"Courier New";color:black'>wc&nbsp;</span><span lang=EN-GB
+style='font-size:12.0pt;font-family:"Times New Roman",serif;color:black'>command&nbsp;gives
+the&nbsp;number of lines of a text file;&nbsp;the&nbsp;</span><span lang=EN-GB
+style='font-size:10.0pt;font-family:"Courier New";color:black'>head&nbsp;</span><span
+lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif;
+color:black'>(or&nbsp;</span><span lang=EN-GB style='font-size:10.0pt;
+font-family:"Courier New";color:black'>tail&nbsp;</span><span lang=EN-GB
+style='font-size:12.0pt;font-family:"Times New Roman",serif;color:black'>)&nbsp;command&nbsp;allows
+you to retrieve the first n (or last) lines of a file.</span></p>
+</ul>
+<h4>Exercise 2:</h4>
+<ul>
+<span
+lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif;
+color:black'>Construct a trigram language model for each training file
+previously created using&nbsp;the following commands:</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal'><span lang=EN-GB style='font-size:10.0pt;font-family:"Courier New";
+color:black'>ngram-count -order 3 -text train.fr -write fr3g.bo -write-vocab
+fr.voc</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal'><span lang=EN-GB style='font-size:10.0pt;font-family:"Courier New";
+color:black'>ngram-count&nbsp;-read fr3g.bo -lm fr3g.BO -gt2min 1 -gt3min
+2&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:25.8pt;text-indent:0cm;line-height:normal'><span lang=EN-GB
+style='font-size:10.0pt;font-family:Symbol;color:black'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><b><span
+lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif;
+color:black'>Q1:&nbsp;</span></b><span lang=EN-GB style='font-size:12.0pt;
+font-family:"Times New Roman",serif;color:black'>Observe files&nbsp;</span><span
+lang=EN-GB style='font-size:10.0pt;font-family:"Courier New";color:black'>.voc&nbsp;</span><span
+lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif;
+color:black'>,&nbsp;</span><span lang=EN-GB style='font-size:10.0pt;font-family:
+"Courier New";color:black'>.bo&nbsp;</span><span lang=EN-GB style='font-size:
+12.0pt;font-family:"Times New Roman",serif;color:black'>and&nbsp;</span><span
+lang=EN-GB style='font-size:10.0pt;font-family:"Courier New";color:black'>.BO&nbsp;</span><span
+lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif;
+color:black'>;&nbsp;what do they contain?</span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:25.8pt;text-indent:0cm;line-height:normal'><span lang=EN-GB
+style='font-size:10.0pt;font-family:Symbol;color:black'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><b><span
+lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif;
+color:black'>Q2:&nbsp;</span></b><span lang=EN-GB style='font-size:12.0pt;
+font-family:"Times New Roman",serif;color:black'>In your opinion, what do the
+symbols &lt;s&gt; and &lt;/s&gt; correspond to?</span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:25.8pt;text-indent:0cm;line-height:normal'><span lang=EN-GB
+style='font-size:10.0pt;font-family:Symbol;color:black'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><b><span
+lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif;
+color:black'>Q3:&nbsp;</span></b><span lang=EN-GB style='font-size:12.0pt;
+font-family:"Times New Roman",serif;color:black'>What are the&nbsp;</span><span
+lang=EN-GB style='font-size:10.0pt;font-family:"Courier New";color:black'>-gt2min&nbsp;</span><span
+lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif;
+color:black'>and&nbsp;</span><span lang=EN-GB style='font-size:10.0pt;
+font-family:"Courier New";color:black'>-gt3min&nbsp;</span><span lang=EN-GB
+style='font-size:12.0pt;font-family:"Times New Roman",serif;color:black'>options&nbsp;</span><span
+lang=EN-GB style='font-size:10.0pt;font-family:"Courier New";color:black'>for&nbsp;</span><span
+lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif;
+color:black'>?&nbsp;In what cases are they useful / necessary?</span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:25.8pt;text-indent:0cm;line-height:normal'><span lang=EN-GB
+style='font-size:10.0pt;font-family:Symbol;color:black'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><b><span
+lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif;
+color:black'>Q4:&nbsp;</span></b><span lang=EN-GB style='font-size:12.0pt;
+font-family:"Times New Roman",serif;color:black'>What is the most common
+trigram in each language?</span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:0cm;line-height:normal'><i><span lang=EN-GB style='font-size:12.0pt;
+font-family:"Times New Roman",serif;color:black'>Note:&nbsp;</span></i><span
+lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif;
+color:black'>The first&nbsp;column of the&nbsp;</span><span lang=EN-GB
+style='font-size:10.0pt;font-family:"Courier New";color:black'>.BO&nbsp;</span><span
+lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif;
+color:black'>file&nbsp;is homogeneous at the logarithm of a probability.</span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:0cm;line-height:normal'><i><span lang=EN-GB style='font-size:12.0pt;
+font-family:"Times New Roman",serif;color:black'>Help:&nbsp;</span></i><span
+lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif;
+color:black'>The unix&nbsp;</span><span lang=EN-GB style='font-size:10.0pt;
+font-family:"Courier New";color:black'>sort -n&nbsp;</span><span lang=EN-GB
+style='font-size:12.0pt;font-family:"Times New Roman",serif;color:black'>command&nbsp;allows
+you to sort a file according to one of its fields present in numerical form.</span></p>
+</ul>
+<h4>Exercise 3:</h4>
+<ul>
+<span
+lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif;
+color:black'>Calculate the perplexity of each text&nbsp;</span><span
+lang=EN-GB style='font-size:10.0pt;font-family:"Courier New";color:black'>test.LANG&nbsp;</span><span
+lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif;
+color:black'>compared to each model&nbsp;</span><span lang=EN-GB
+style='font-size:10.0pt;font-family:"Courier New";color:black'>LANG3g.BO&nbsp;</span><span
+lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif;
+color:black'>.&nbsp;Example of using the ngram command:</span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal'><span lang=EN-GB style='font-size:10.0pt;font-family:"Courier New";
+color:black'>ngram -lm fr3g.BO -ppl test.en</span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:25.8pt;text-indent:0cm;line-height:normal'><span lang=EN-GB
+style='font-size:10.0pt;font-family:Symbol;color:black'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><b><span
+lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif;
+color:black'>Q1:&nbsp;</span></b><span lang=EN-GB style='font-size:12.0pt;
+font-family:"Times New Roman",serif;color:black'>Present the results in the
+form of a matrix.</span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:25.8pt;text-indent:0cm;line-height:normal'><span lang=EN-GB
+style='font-size:10.0pt;font-family:Symbol;color:black'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><b><span
+lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif;
+color:black'>Q2:&nbsp;</span></b><span lang=EN-GB style='font-size:12.0pt;
+font-family:"Times New Roman",serif;color:black'>How can we build
+a&nbsp;language recognition&nbsp;system&nbsp;for a text using a stochastic
+language model?</span></p>
+</ul>
+<h4>Exercise 4:</h4>
+<ul>
+<span
+lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif;
+color:black'>Redo the same system with n-gram CHARACTER models.</span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:25.8pt;text-indent:0cm;line-height:normal'><span lang=EN-GB
+style='font-size:10.0pt;font-family:Symbol;color:black'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><b><span
+lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif;
+color:black'>Q1:&nbsp;</span></b><span lang=EN-GB style='font-size:12.0pt;
+font-family:"Times New Roman",serif;color:black'>What are the perplexities for
+this character model?&nbsp;What might be&nbsp;the advantages / disadvantages of
+the character model compared to the word model?</span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:25.8pt;text-indent:0cm;line-height:normal'><span style='font-size:
+10.0pt;font-family:Symbol;color:black'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif;
+color:black'>Q2:&nbsp;</span></b><span lang=EN-GB style='font-size:12.0pt;
+font-family:"Times New Roman",serif;color:black'>Redo the model by replacing
+the space with any symbol (eg, &lt;SPACE&gt;).&nbsp;</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif;color:black'>What
+are the perplexities for this model?</span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:0cm;line-height:normal'><i><span lang=EN-GB style='font-size:12.0pt;
+font-family:"Times New Roman",serif;color:black'>Help:&nbsp;</span></i><span
+lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif;
+color:black'>One model can be&nbsp;considered more efficient than another if,
+for a text in the same language, the perplexity is lower and, for a text in
+another language, the perplexity is higher.</span></p>
+</ul>
+<h4>Exercise 5:</h4>
+<ul>
+<span
+lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif;
+color:black'>Extend the perlexity matrix for all other languages.</span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:25.8pt;text-indent:0cm;line-height:normal'><span style='font-size:
+10.0pt;font-family:Symbol;color:black'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif;
+color:black'>Q1:&nbsp;</span></b><span lang=EN-GB style='font-size:12.0pt;
+font-family:"Times New Roman",serif;color:black'>Check which language pairs are the easiest / hard to
+distinguish from each other</span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:25.8pt;text-indent:0cm;line-height:normal'><span style='font-size:
+10.0pt;font-family:Symbol;color:black'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif;
+color:black'>Q2:&nbsp;</span></b><span lang=EN-GB style='font-size:12.0pt;
+font-family:"Times New Roman",serif;color:black'>Redo the model by replacing
+the space with any symbol (eg, &lt;SPACE&gt;).&nbsp;</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif;color:black'>What
+are the perplexities for this model?</span></p>
+</ul>
+</ul>
+<h3>Part 2:</h3>
+<i>The Deep Learning Part</i>
+<ul>
+<h4>Exercise 1:</h4>
+<ul>
+<p>Language Identification with&nbsp;<a
+href="https://github.com/facebookresearch/fastText.git">FastText</a></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:25.8pt;text-indent:0cm;line-height:normal'><span lang=EN-GB
+style='font-size:10.0pt;font-family:Symbol;color:black'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><b><span
+lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif;
+color:black'>Q1:&nbsp;</span></b><span lang=EN-GB style='font-size:12.0pt;
+font-family:"Times New Roman",serif;color:black'>Redo the confusion matrix with
+a model learned with fasttext using all the learning corpora.</span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:25.8pt;text-indent:0cm;line-height:normal'><span lang=EN-GB
+style='font-size:10.0pt;font-family:Symbol;color:black'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><b><span
+lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif;
+color:black'>Q2:&nbsp;</span></b><span lang=EN-GB style='font-size:12.0pt;
+font-family:"Times New Roman",serif;color:black'>What are the&nbsp;advantages
+that you can identify when using fasttext compared to language models?</span></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:0cm;line-height:normal'><i><span lang=EN-GB style='font-size:12.0pt;
+font-family:"Times New Roman",serif;color:black'>Help:&nbsp;</span></i><span
+lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif;
+color:black'>You will need to learn a model in&nbsp;</span><span lang=EN-GB
+style='font-size:10.0pt;font-family:"Courier New";color:black'>supervised&nbsp;</span><span
+lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif;
+color:black'>mode in&nbsp;order to successfully complete this
+exercise.&nbsp;Before each sentence, you will need to add a label in the
+form&nbsp;</span><span lang=EN-GB style='font-size:10.0pt;font-family:"Courier New";
+color:black'>__label__XX&nbsp;</span><span lang=EN-GB style='font-size:12.0pt;
+font-family:"Times New Roman",serif;color:black'>where&nbsp;</span><span
+lang=EN-GB style='font-size:10.0pt;font-family:"Courier New";color:black'>XX&nbsp;</span><span
+lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif;
+color:black'>will be replaced by the language code of the learning corpus (fr
+for French, en for English, etc.).</span></p>
+
+<div class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;line-height:normal'><span style='font-size:13.5pt;font-family:
+"Times New Roman",serif;color:black'>
+</ul>
+</ul>
+<hr>
+
+</span></div>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:0cm;line-height:normal'><b><span style='font-size:18.0pt;
+font-family:"Times New Roman",serif;color:black'>Optionnal</span></b></p>
+
+<p class=MsoNormal style='margin-top:5.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:25.8pt;text-indent:0cm;line-height:normal'><span lang=EN-GB
+style='font-size:10.0pt;font-family:Symbol;color:black'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+lang=EN-GB style='font-size:12.0pt;font-family:"Times New Roman",serif;
+color:black'>Study the influence of the size of the training file on the
+performance of the system.&nbsp;Graphically show the impact on perplexity for
+several training file sizes.</span></p>
+<br>
+
+<hr>
+</div>
+
+</body>
+
+</html>
