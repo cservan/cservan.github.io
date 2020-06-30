@@ -8,7 +8,7 @@ echo "export SRILM=$DESTINATION" >> ~/.bashrc
 . ~/.bashrc
 
 pushd $DESTINATION
-	wget https://cservan.github.io/website/tools/srilm-1.6.0.tar.gz
+	wget https://cservan.github.io/tools/srilm-1.6.0.tar.gz
 	tar xvfz srilm-1.6.0.tar.gz
 # for linux:    
 	SRILM=$DESTINATION make MACHINE_TYPE=i686-m64 World -j4
