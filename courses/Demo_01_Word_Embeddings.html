@@ -69,9 +69,9 @@
             vocab = {}
             rev_vocab = []
             lines = open(filename).readlines()
-            vectors = np.zeros((int(lines[0].split()[0]), int(lines[0].split()[1])))
+            vectors = np.zeros((int(lines[0].split()[0]), int(lines[0].split(" ")[1])))
             for i, line in enumerate(lines):
-                tokens = line.strip().split()
+                tokens = line.strip().split(" ")
                 if (i > 0) :
                     vocab[tokens[0]] = i-1
                     rev_vocab.append(tokens[0])
