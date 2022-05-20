@@ -2,7 +2,7 @@
 <!-- saved from url=(0073)https://cservan.github.io/tp3_POS_tagging.html -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	
-	<title>Demo 4: Deep Learning for NLP - Word Embeddings</title>
+	<title>Demo 1: Deep Learning for NLP - Word Embeddings</title>
 <link href="chrome-extension://lnkdbjbjpnpjeciipoaflmpcddinpjjp/mytube.css" rel="stylesheet" type="text/css"><script src="chrome-extension://lnkdbjbjpnpjeciipoaflmpcddinpjjp/mutationObserver.js"></script><script src="chrome-extension://lnkdbjbjpnpjeciipoaflmpcddinpjjp/mytube.js"></script></head>
 <body lang="fr-FR" text="#000000" dir="ltr" style="background: transparent">
 <h1 align="center">Demo 1: Deep Learning for NLP - Word Embeddings</h1>
@@ -15,10 +15,6 @@
 		
 		</li><li>Installation:
 			<ul>
-                <li>You may need to install <tt>cmake</tt> and <tt>gcc</tt> BEFORE install FastText, on Ubuntu you should use this command line:
-                <pre>sudo apt update && sudo apt install cmake gcc
-                </pre>
-                </li>
 				<li>Download the installation script <tt><a href="https://cservan.github.io/tools/FT_installation.bash">FT_installation.bash</a></tt> then type:<pre>bash FT_installation.bash</pre><b>WARNING: </b> the tool will be installed by default into the "tools" directory located into your home directory. <br> <br>
 				</li><li>Once the installation is done, type <pre>source ~/.bashrc</pre>
 				</li><li>Test your installation by typing <pre>fasttext --help</pre> the result should print the help of the fasttext command.
@@ -27,26 +23,11 @@
 	<h2>Data</h2>
 	
 	<ul>
-		<li>Use the text8 data file (download <a href="https://cservan.github.io/tools/text8.zip">here</a>) to train our word embeddings.
-		<li>A second dataset from wikipedia is available (download <a href="https://cservan.github.io/data/wiki.en.txt.gz">here</a>) to train our word embeddings.
+		<li>Use the wikipedia substract data file (download <a href="https://cservan.github.io/tools/wiki.en.gz">here</a>) to train our word embeddings.
+		<!-- <li>A second dataset from wikipedia is available (download <a href="https://cservan.github.io/data/wiki.en.txt.gz">here</a>) to train our word embeddings. -->
 	</li></ul>
-	<hr>
-	<h2>Report
-	</h2>
-	<p>You should send me your report <u><b>the day before the next session</b></u> using <b>PDF</b> format
-	at the address christophe_dot_servan_at_epita_dot_fr (replace
-	_dot_ and _at_ by dots and at, respectively) </p><p>
-	<em>Remarks:</em>
-	</p><ul>
-                <li>If you encounter some issues, feel free to send me an email, I'll answer you ASAP;
-                </li><li><b>NO jupyternotes</b> nor scripts: they will be ignored. I want you to write a report. This also means you have to put your name on it and to do an effort of presentation! ;-)
-                </li><li>The report mark is important for the final course mark ;
-                </li><li>You have to report working in groups, if you did so (ask me before) ;
-                </li><li>If you send me your report lately, you will be penalised ;
-                </li><li>Plagianism equal to zero ;
-                </li><li>No report equal to zero ;
-	</li></ul>
-	<p></p>
+
+
 	<hr>
 	<h2>Work to do</h2>
 	<ol>
@@ -56,8 +37,8 @@
 				<li>Fristly you will train your word embeddings
 				</li><li>First task is to load the them
 				</li><li>Then find the closest words
-				</li><li>In a fourth part, you will process analogy
-				</li><li>Finally, Evaluate the embeddings according a well known dataset
+				</li><li>Finally, you will process analogy
+				<!-- </li><li>Finally, Evaluate the embeddings according a well known dataset -->
 			</li></ul>
 	</ol>
 	<h3>I. Train word embeddings</h3>
@@ -66,7 +47,7 @@
 		
 		<p><b>WARNING:</b> Read carefully the documentation available here: <a href="https://github.com/facebookresearch/fastText">https://github.com/facebookresearch/fastText</a></p>
 		<ol>
-			<p><strong>Exercice 1:</strong> Train two models for each dataset, with a vector dimension of 50, 5 epochs of training and a window size of 5.
+			<p><strong>Exercice 1:</strong> Train two models for each dataset, with a vector dimension of 50, 5iteration of training and a window size of 15.
 			</p><ol>
 				<p><strong>Q1:</strong> Train a cbow model, explain your command line (1pt)</p>
 				<p><strong>Q2:</strong> Train a skip-gram model, explain your command line (1pt)</p>
@@ -157,7 +138,7 @@ Then we can use some numpy trick to recover the indices of the n highest scores.
 		<p> Word analogies can be exposed by translating a word vector in a direction that
 corresponds to a linguistic or semantic relationship between two other words.</br>
 So if we have <tt>w1</tt> and <tt>w2</tt> in relation <tt>R(w1,w2)</tt>, we can compute the relation
-<tt>r = vec(w2)-vec(W1)</tt>, and then apply this relation to the vector of another
+<tt>r=vec(w2)-vec(W1)</tt>, and then apply this relation to the vector of another
 word <tt>vec(w3)</tt>. </br>
 The word closest to <tt>vec(w3)+r</tt> should also exhibit the same relation.</br>
 Therefore, the idea is to use the closest function to find vectors similar to <tt>vec(w2)-vec(w1)+vec(w3)</tt>.
@@ -181,32 +162,32 @@ Therefore, the idea is to use the closest function to find vectors similar to <t
 			</ol>
 		</ol>
 	</ol>
-	<h3>V. Evaluation</h3>
-	<ol>
-		<p> To evaluate the quality of a set of word embeddings, we will use data from the WS-3531 dataset (<a href="https://github.com/k-kawakami/embedding-evaluation">https://github.com/k-kawakami/embedding-evaluation</a>). </br>
-The file <tt>human_correlation.txt</tt> contains on each line a pair of words followed by the average of a similarity rating by human judges.
-The higher the rating, the more similar the judges though the words in the pair are. </br>
-One way to evaluate the quality of word embeddings is to compute the correlation between the cosine similarity of the pairs and human ratings. </br>
-Since cosine similarities and judgements are on a different scale, we will use a rank correlation (how similar two rankings are).</br>
-To compute Spearman's &rho; correlation, you can use scipy. 
-The <tt>spearmanr</tt> function takes two lists of values as argument and returns two values.
-The first one is &rho;, the second one is the significance of the estimation (pval). </br>
-Here we are only interested in the first one.
-        </p>
-        <pre>
-from scipy import stats
-serie1 = [1.3, 2.2, 3.1, 4.0]
-serie2 = [4.5, 1.8, 3.2, 2.7]
-print(stats.spearmanr(serie1, serie2)[0])
-</pre>
-		<ol>
-			<p><strong>Exercice 1:</strong> compute the &rho; correlation between human judgements and the word
-embeddings you have created for different window length</p>
-			<ol>
-				<p><strong>Q1: </strong> What is the best window length which correlate the best? (1pt)</p>
-				<p><strong>Q2: </strong> What is the best vector dimension which correlate the best? (1pt)</p>
-			</ol>
-		</ol>
+	<!-- <h3>V. Evaluation</h3> -->
+	<!-- <ol> -->
+		<!-- <p> To evaluate the quality of a set of word embeddings, we will use data from the WS-3531 dataset (<a href="https://github.com/k-kawakami/embedding-evaluation">https://github.com/k-kawakami/embedding-evaluation</a>). </br> -->
+<!-- The file <tt>human_correlation.txt</tt> contains on each line a pair of words followed by the average of a similarity rating by human judges. -->
+<!-- The higher the rating, the more similar the judges though the words in the pair are. </br> -->
+<!-- One way to evaluate the quality of word embeddings is to compute the correlation between the cosine similarity of the pairs and human ratings. </br> -->
+<!-- Since cosine similarities and judgements are on a different scale, we will use a rank correlation (how similar two rankings are).</br> -->
+<!-- To compute Spearman's &rho; correlation, you can use scipy.  -->
+<!-- The <tt>spearmanr</tt> function takes two lists of values as argument and returns two values. -->
+<!-- The first one is &rho;, the second one is the significance of the estimation (pval). </br> -->
+<!-- Here we are only interested in the first one. -->
+        <!-- </p> -->
+        <!-- <pre> -->
+<!-- from scipy import stats -->
+<!-- serie1 = [1.3, 2.2, 3.1, 4.0] -->
+<!-- serie2 = [4.5, 1.8, 3.2, 2.7] -->
+<!-- print(stats.spearmanr(serie1, serie2)[0]) -->
+<!-- </pre>         -->
+		<!-- <ol> -->
+			<!-- <p><strong>Exercice 1:</strong> compute the &rho; correlation between human judgements and the word -->
+<!-- embeddings you have created for different window length</p> -->
+			<!-- <ol> -->
+				<!-- <p><strong>Q1: </strong> What is the best window length which correlate the best? (1pt)</p> -->
+				<!-- <p><strong>Q2: </strong> What is the best vector dimension which correlate the best? (1pt)</p> -->
+			<!-- </ol> -->
+		<!-- </ol> -->
 	</ol>
 </ol>
  <br> <br>The End.
